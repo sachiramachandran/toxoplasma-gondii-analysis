@@ -2,6 +2,15 @@ NextStrain Framework for Toxoplasma gondii GRA6
 
 "Explain what the Respository is for"
 
+
+Follow steps to installing NextStrain software:
+https://docs.nextstrain.org/en/latest/install.html 
+
+Run sample phylogenetic workflow:
+https://docs.nextstrain.org/en/latest/tutorials/running-a-phylogenetic-workflow.html
+
+STEPS FOR THE REST:
+
 Files needed to provide:
 
 metadata.tsv (Provide at least "strain" "country" "date") -- Make sure all labels are lowercase
