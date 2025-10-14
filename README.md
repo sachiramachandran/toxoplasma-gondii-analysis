@@ -25,3 +25,8 @@ Snakefile (changes needed are written in green)
 .json (Match key titles to metadata.tsv file)
 
 "Explain the steps for the repository"
+
+\```bash
+nextstrain 
+build . 
+\```
