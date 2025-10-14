@@ -145,17 +145,37 @@
       {
         "key": "country",
         "demes": {
-          "Ethiopia": {
-            "latitude": 8.98,
-            "longitude": 39.927499
-          },
           "Turkey": {
             "latitude": 39.936944,
             "longitude": 32.846944
           },
+          "Suriname": {
+            "latitude": 5.460021,
+            "longitude": -54.09964
+          },
+          "Brazil": {
+            "latitude": -8.05,
+            "longitude": -34.88
+          },
+          "Gabon": {
+            "latitude": -1.63918,
+            "longitude": 13.58253
+          },
+          "Barbados": {
+            "latitude": 13.15055,
+            "longitude": -59.5461
+          },
           "French Guiana": {
             "latitude": 4.766,
             "longitude": -52.4866
+          },
+          "Austria": {
+            "latitude": 46.72583,
+            "longitude": 15.23806
+          },
+          "China": {
+            "latitude": 30.5525,
+            "longitude": 114.27139
           },
           "Puerto Rico": {
             "latitude": 18.08139,
@@ -165,43 +185,27 @@
             "latitude": 16.26166,
             "longitude": -61.512777
           },
-          "Brazil": {
-            "latitude": -8.05,
-            "longitude": -34.88
-          },
           "Portugal": {
             "latitude": 41.83083,
             "longitude": -7.00917
           },
-          "Austria": {
-            "latitude": 46.72583,
-            "longitude": 15.23806
+          "Ethiopia": {
+            "latitude": 8.98,
+            "longitude": 39.927499
           },
           "USA": {
             "latitude": 40.043888,
             "longitude": -75.19666
-          },
-          "Suriname": {
-            "latitude": 5.460021,
-            "longitude": -54.09964
-          },
-          "Barbados": {
-            "latitude": 13.15055,
-            "longitude": -59.5461
-          },
-          "Gabon": {
-            "latitude": -1.63918,
-            "longitude": 13.58253
-          },
-          "China": {
-            "latitude": 30.5525,
-            "longitude": 114.27139
           }
         }
       },
       {
         "key": "region",
         "demes": {
+          "South America": {
+            "latitude": -13.083583,
+            "longitude": -58.470721
+          },
           "Europe": {
             "latitude": 49.646237,
             "longitude": 10.799454
@@ -213,10 +217,6 @@
           "Africa": {
             "latitude": 4.070194,
             "longitude": 21.824559
-          },
-          "South America": {
-            "latitude": -13.083583,
-            "longitude": -58.470721
           },
           "North America": {
             "latitude": 28.2367447,
@@ -238,7 +238,7 @@
       "num_date": {
         "value": 1959.006,
         "confidence": [
-          1067.832,
+          1067.958,
           1972.481
         ]
       },
@@ -246,29 +246,29 @@
         "value": "Portugal",
         "confidence": {
           "Portugal": 0.388,
-          "Puerto Rico": 0.236,
-          "Turkey": 0.0899,
-          "Brazil": 0.0785,
-          "French Guiana": 0.0778,
-          "Barbados": 0.0446,
-          "Gabon": 0.0379,
-          "Guadeloupe": 0.0255,
-          "China": 0.0155,
+          "Puerto Rico": 0.237,
+          "Turkey": 0.0916,
+          "Brazil": 0.077,
+          "French Guiana": 0.0763,
+          "Barbados": 0.0451,
+          "Gabon": 0.0373,
+          "Guadeloupe": 0.0256,
+          "China": 0.0157,
           "Austria": 0.00281
         },
-        "entropy": 1.784
+        "entropy": 1.783
       },
       "region": {
         "value": "Caribbean",
         "confidence": {
-          "Caribbean": 0.503,
+          "Caribbean": 0.505,
           "Europe": 0.264,
-          "Asia": 0.0897,
-          "South America": 0.0754,
-          "Africa": 0.0539,
-          "North America": 0.0139
+          "Asia": 0.0904,
+          "South America": 0.0736,
+          "Africa": 0.0534,
+          "North America": 0.0138
         },
-        "entropy": 1.325
+        "entropy": 1.322
       }
     },
     "branch_attrs": {
@@ -317,52 +317,52 @@
         "node_attrs": {
           "div": 1.13924e-17,
           "num_date": {
-            "value": 1967.808,
+            "value": 1967.785,
             "confidence": [
-              1068.814,
+              1068.943,
               1972.651
             ]
           },
           "country": {
             "value": "Puerto Rico",
             "confidence": {
-              "Puerto Rico": 0.316,
+              "Puerto Rico": 0.317,
               "Portugal": 0.188,
-              "Turkey": 0.12,
-              "Brazil": 0.105,
-              "French Guiana": 0.104,
-              "Barbados": 0.0592,
-              "Gabon": 0.0503,
-              "Guadeloupe": 0.0336,
-              "China": 0.0202,
+              "Turkey": 0.122,
+              "Brazil": 0.103,
+              "French Guiana": 0.102,
+              "Barbados": 0.06,
+              "Gabon": 0.0495,
+              "Guadeloupe": 0.0338,
+              "China": 0.0205,
               "Austria": 0.00173
             },
-            "entropy": 1.943
+            "entropy": 1.942
           },
           "region": {
             "value": "Caribbean",
             "confidence": {
-              "Caribbean": 0.717,
-              "Asia": 0.0922,
-              "South America": 0.0838,
-              "Europe": 0.0734,
-              "Africa": 0.0298,
-              "North America": 0.00416
+              "Caribbean": 0.719,
+              "Asia": 0.0932,
+              "South America": 0.0812,
+              "Europe": 0.0731,
+              "Africa": 0.0292,
+              "North America": 0.00413
             },
-            "entropy": 0.985
+            "entropy": 0.979
           }
         },
         "branch_attrs": {
           "mutations": {
             "nuc": [
-              "G171A"
+              "G576A"
             ],
             "GRA6": [
-              "R50K"
+              "G185D"
             ]
           },
           "labels": {
-            "aa": "GRA6: R50K"
+            "aa": "GRA6: G185D"
           }
         },
         "children": [
@@ -373,7 +373,7 @@
               "num_date": {
                 "value": 2004.001,
                 "confidence": [
-                  1992.663,
+                  1992.503,
                   2004.938
                 ]
               },
@@ -382,17 +382,17 @@
                 "confidence": {
                   "Puerto Rico": 1.0
                 },
-                "entropy": 0.00218
+                "entropy": 0.00217
               },
               "region": {
                 "value": "Caribbean",
                 "confidence": {
                   "Caribbean": 0.99,
-                  "Asia": 0.00365,
-                  "South America": 0.00283,
-                  "Europe": 0.00205
+                  "Asia": 0.00367,
+                  "South America": 0.00275,
+                  "Europe": 0.00204
                 },
-                "entropy": 0.0678
+                "entropy": 0.0672
               }
             },
             "branch_attrs": {
@@ -426,6 +426,9 @@
                     "inferred": true,
                     "raw_value": "2004-XX-XX"
                   },
+                  "host": {
+                    "value": "Cat (Felis silvestris catus)"
+                  },
                   "country": {
                     "value": "Puerto Rico",
                     "confidence": {
@@ -439,9 +442,6 @@
                       "Caribbean": 1.0
                     },
                     "entropy": -1e-12
-                  },
-                  "host": {
-                    "value": "Cat (Felis silvestris catus)"
                   }
                 },
                 "branch_attrs": {
@@ -461,6 +461,9 @@
                     "inferred": true,
                     "raw_value": "2004-XX-XX"
                   },
+                  "host": {
+                    "value": "Cat (Felis silvestris catus)"
+                  },
                   "country": {
                     "value": "Puerto Rico",
                     "confidence": {
@@ -474,9 +477,6 @@
                       "Caribbean": 1.0
                     },
                     "entropy": -1e-12
-                  },
-                  "host": {
-                    "value": "Cat (Felis silvestris catus)"
                   }
                 },
                 "branch_attrs": {
@@ -486,42 +486,42 @@
             ]
           },
           {
-            "name": "NODE_0000013",
+            "name": "NODE_0000006",
             "node_attrs": {
               "div": 0.00135335,
               "num_date": {
                 "value": 1967.714,
                 "confidence": [
-                  1431.713,
+                  1431.143,
                   1972.821
                 ]
               },
               "country": {
                 "value": "Turkey",
                 "confidence": {
-                  "Turkey": 0.199,
-                  "Brazil": 0.175,
-                  "French Guiana": 0.173,
-                  "Puerto Rico": 0.114,
-                  "Barbados": 0.0982,
-                  "Gabon": 0.0835,
-                  "Portugal": 0.0672,
-                  "Guadeloupe": 0.0555,
-                  "China": 0.0333
+                  "Turkey": 0.203,
+                  "Brazil": 0.171,
+                  "French Guiana": 0.17,
+                  "Puerto Rico": 0.115,
+                  "Barbados": 0.0995,
+                  "Gabon": 0.0822,
+                  "Portugal": 0.0681,
+                  "Guadeloupe": 0.0557,
+                  "China": 0.0337
                 },
-                "entropy": 2.084
+                "entropy": 2.086
               },
               "region": {
                 "value": "Caribbean",
                 "confidence": {
-                  "Caribbean": 0.664,
-                  "Asia": 0.143,
-                  "South America": 0.136,
-                  "Africa": 0.0317,
+                  "Caribbean": 0.667,
+                  "Asia": 0.144,
+                  "South America": 0.131,
+                  "Africa": 0.0309,
                   "Europe": 0.0246,
                   "North America": 0.00183
                 },
-                "entropy": 1.033
+                "entropy": 1.026
               }
             },
             "branch_attrs": {
@@ -529,42 +529,42 @@
             },
             "children": [
               {
-                "name": "NODE_0000014",
+                "name": "NODE_0000004",
                 "node_attrs": {
                   "div": 0.00270723,
                   "num_date": {
                     "value": 1972.001,
                     "confidence": [
-                      1969.654,
+                      1969.588,
                       1972.938
                     ]
                   },
                   "country": {
                     "value": "Turkey",
                     "confidence": {
-                      "Turkey": 0.5,
-                      "Gabon": 0.214,
-                      "Brazil": 0.0692,
-                      "French Guiana": 0.0686,
-                      "Puerto Rico": 0.045,
-                      "Barbados": 0.0391,
-                      "Portugal": 0.0267,
-                      "Guadeloupe": 0.0221,
-                      "China": 0.0133
+                      "Turkey": 0.504,
+                      "Gabon": 0.209,
+                      "Brazil": 0.0683,
+                      "French Guiana": 0.0677,
+                      "Puerto Rico": 0.0459,
+                      "Barbados": 0.0399,
+                      "Portugal": 0.0272,
+                      "Guadeloupe": 0.0224,
+                      "China": 0.0136
                     },
                     "entropy": 1.566
                   },
                   "region": {
                     "value": "Asia",
                     "confidence": {
-                      "Asia": 0.551,
-                      "Caribbean": 0.239,
-                      "Africa": 0.146,
-                      "South America": 0.0419,
-                      "Europe": 0.0179,
-                      "North America": 0.00507
+                      "Asia": 0.554,
+                      "Caribbean": 0.241,
+                      "Africa": 0.141,
+                      "South America": 0.0411,
+                      "Europe": 0.018,
+                      "North America": 0.00508
                     },
-                    "entropy": 1.183
+                    "entropy": 1.177
                   }
                 },
                 "branch_attrs": {
@@ -594,6 +594,9 @@
                         "inferred": true,
                         "raw_value": "1972-XX-XX"
                       },
+                      "host": {
+                        "value": "Human (congenital)"
+                      },
                       "country": {
                         "value": "Turkey",
                         "confidence": {
@@ -607,9 +610,6 @@
                           "Asia": 1.0
                         },
                         "entropy": -1e-12
-                      },
-                      "host": {
-                        "value": "Human (congenital)"
                       }
                     },
                     "branch_attrs": {
@@ -617,13 +617,13 @@
                     }
                   },
                   {
-                    "name": "NODE_0000006",
+                    "name": "NODE_0000005",
                     "node_attrs": {
                       "div": 0.00270723,
                       "num_date": {
-                        "value": 2005.828,
+                        "value": 2007.001,
                         "confidence": [
-                          1992.563,
+                          1989.788,
                           2007.938
                         ]
                       },
@@ -632,19 +632,19 @@
                         "confidence": {
                           "Gabon": 1.0
                         },
-                        "entropy": 0.00273
+                        "entropy": 0.00267
                       },
                       "region": {
                         "value": "Africa",
                         "confidence": {
                           "Africa": 0.975,
-                          "Asia": 0.0159,
-                          "Caribbean": 0.0048,
+                          "Asia": 0.0154,
+                          "Caribbean": 0.00468,
                           "Europe": 0.00253,
-                          "South America": 0.00108,
-                          "North America": 0.00104
+                          "South America": 0.00105,
+                          "North America": 0.00105
                         },
-                        "entropy": 0.146
+                        "entropy": 0.143
                       }
                     },
                     "branch_attrs": {
@@ -656,13 +656,16 @@
                         "node_attrs": {
                           "div": 0.00270723,
                           "num_date": {
-                            "value": 2007.066,
+                            "value": 2007.001,
                             "confidence": [
                               2007.001,
-                              2007.999
+                              2007.893
                             ],
                             "inferred": true,
                             "raw_value": "2007-XX-XX"
+                          },
+                          "host": {
+                            "value": "Chicken (Gallus gallus domesticus)"
                           },
                           "country": {
                             "value": "Gabon",
@@ -677,9 +680,6 @@
                               "Africa": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Chicken (Gallus gallus domesticus)"
                           }
                         },
                         "branch_attrs": {
@@ -691,13 +691,16 @@
                         "node_attrs": {
                           "div": 0.00270723,
                           "num_date": {
-                            "value": 2007.066,
+                            "value": 2007.001,
                             "confidence": [
                               2007.001,
-                              2007.999
+                              2007.893
                             ],
                             "inferred": true,
                             "raw_value": "2007-XX-XX"
+                          },
+                          "host": {
+                            "value": "Chicken (Gallus gallus domesticus)"
                           },
                           "country": {
                             "value": "Gabon",
@@ -712,9 +715,6 @@
                               "Africa": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Chicken (Gallus gallus domesticus)"
                           }
                         },
                         "branch_attrs": {
@@ -732,35 +732,35 @@
                   "num_date": {
                     "value": 2002.001,
                     "confidence": [
-                      1993.914,
+                      1993.843,
                       2002.938
                     ]
                   },
                   "country": {
                     "value": "Barbados",
                     "confidence": {
-                      "Barbados": 0.478,
+                      "Barbados": 0.479,
                       "Guadeloupe": 0.2,
                       "China": 0.164,
-                      "Turkey": 0.0373,
-                      "Brazil": 0.0352,
-                      "French Guiana": 0.0349,
-                      "Puerto Rico": 0.0212,
-                      "Gabon": 0.0156,
-                      "Portugal": 0.0126
+                      "Turkey": 0.0381,
+                      "Brazil": 0.0345,
+                      "French Guiana": 0.0342,
+                      "Puerto Rico": 0.0215,
+                      "Gabon": 0.0154,
+                      "Portugal": 0.0128
                     },
-                    "entropy": 1.543
+                    "entropy": 1.542
                   },
                   "region": {
                     "value": "Caribbean",
                     "confidence": {
                       "Caribbean": 0.929,
-                      "Asia": 0.0579,
-                      "South America": 0.00773,
-                      "Africa": 0.00281,
-                      "Europe": 0.00222
+                      "Asia": 0.0582,
+                      "South America": 0.00747,
+                      "Africa": 0.00275,
+                      "Europe": 0.0022
                     },
-                    "entropy": 0.305
+                    "entropy": 0.304
                   }
                 },
                 "branch_attrs": {
@@ -793,6 +793,9 @@
                         "inferred": true,
                         "raw_value": "2002-XX-XX"
                       },
+                      "host": {
+                        "value": "Macaque (Cynomolgus sp)"
+                      },
                       "country": {
                         "value": "Barbados",
                         "confidence": {
@@ -806,9 +809,6 @@
                           "Caribbean": 1.0
                         },
                         "entropy": -1e-12
-                      },
-                      "host": {
-                        "value": "Macaque (Cynomolgus sp)"
                       }
                     },
                     "branch_attrs": {
@@ -822,22 +822,22 @@
                       "num_date": {
                         "value": 2009.746,
                         "confidence": [
-                          1995.625,
-                          2010.844
+                          1995.683,
+                          2010.842
                         ]
                       },
                       "country": {
                         "value": "Guadeloupe",
                         "confidence": {
-                          "Guadeloupe": 0.426,
+                          "Guadeloupe": 0.425,
                           "China": 0.383,
-                          "Barbados": 0.144,
-                          "Brazil": 0.0108,
-                          "French Guiana": 0.0107,
-                          "Turkey": 0.0107,
-                          "Puerto Rico": 0.00607,
-                          "Gabon": 0.0045,
-                          "Portugal": 0.00365
+                          "Barbados": 0.145,
+                          "Turkey": 0.0109,
+                          "Brazil": 0.0106,
+                          "French Guiana": 0.0105,
+                          "Puerto Rico": 0.00615,
+                          "Gabon": 0.00443,
+                          "Portugal": 0.0037
                         },
                         "entropy": 1.241
                       },
@@ -845,12 +845,12 @@
                         "value": "Caribbean",
                         "confidence": {
                           "Caribbean": 0.876,
-                          "Asia": 0.116,
-                          "South America": 0.0032,
-                          "Africa": 0.00229,
-                          "Europe": 0.00161
+                          "Asia": 0.117,
+                          "South America": 0.00312,
+                          "Africa": 0.00225,
+                          "Europe": 0.0016
                         },
-                        "entropy": 0.413
+                        "entropy": 0.412
                       }
                     },
                     "branch_attrs": {
@@ -870,6 +870,9 @@
                             "inferred": true,
                             "raw_value": "2014-XX-XX"
                           },
+                          "host": {
+                            "value": "Cat (Felis silvestris catus)"
+                          },
                           "country": {
                             "value": "China",
                             "confidence": {
@@ -883,9 +886,6 @@
                               "Asia": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Cat (Felis silvestris catus)"
                           }
                         },
                         "branch_attrs": {
@@ -897,13 +897,16 @@
                         "node_attrs": {
                           "div": 0.00541964,
                           "num_date": {
-                            "value": 2010.275,
+                            "value": 2010.728,
                             "confidence": [
                               2010.001,
                               2010.999
                             ],
                             "inferred": true,
                             "raw_value": "2010-XX-XX"
+                          },
+                          "host": {
+                            "value": "Human / Congenital"
                           },
                           "country": {
                             "value": "Guadeloupe",
@@ -918,9 +921,6 @@
                               "Caribbean": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Human / Congenital"
                           }
                         },
                         "branch_attrs": {
@@ -932,13 +932,13 @@
                 ]
               },
               {
-                "name": "NODE_0000004",
+                "name": "NODE_0000007",
                 "node_attrs": {
                   "div": 0.00270599,
                   "num_date": {
-                    "value": 1989.075,
+                    "value": 1989.767,
                     "confidence": [
-                      1977.591,
+                      1977.085,
                       1997.821
                     ]
                   },
@@ -947,17 +947,17 @@
                     "confidence": {
                       "Brazil": 0.495,
                       "French Guiana": 0.49,
-                      "Guadeloupe": 0.014
+                      "Guadeloupe": 0.0137
                     },
-                    "entropy": 0.766
+                    "entropy": 0.765
                   },
                   "region": {
                     "value": "South America",
                     "confidence": {
                       "South America": 0.999,
-                      "Caribbean": 0.00108
+                      "Caribbean": 0.00105
                     },
-                    "entropy": 0.0099
+                    "entropy": 0.00961
                   }
                 },
                 "branch_attrs": {
@@ -975,13 +975,13 @@
                 },
                 "children": [
                   {
-                    "name": "NODE_0000010",
+                    "name": "NODE_0000011",
                     "node_attrs": {
                       "div": 0.00541325,
                       "num_date": {
                         "value": 2003.001,
                         "confidence": [
-                          1997.194,
+                          1997.111,
                           2003.938
                         ]
                       },
@@ -997,7 +997,7 @@
                         "confidence": {
                           "South America": 1.0
                         },
-                        "entropy": 0.00244
+                        "entropy": 0.0024
                       }
                     },
                     "branch_attrs": {
@@ -1022,6 +1022,9 @@
                             "inferred": true,
                             "raw_value": "2003-XX-XX"
                           },
+                          "host": {
+                            "value": "Cat (Felis silvestris catus)"
+                          },
                           "country": {
                             "value": "Brazil",
                             "confidence": {
@@ -1035,9 +1038,6 @@
                               "South America": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Cat (Felis silvestris catus)"
                           }
                         },
                         "branch_attrs": {
@@ -1057,6 +1057,9 @@
                             "inferred": true,
                             "raw_value": "2005-XX-XX"
                           },
+                          "host": {
+                            "value": "Capybara (Hydrochaeris hydrochaeris)"
+                          },
                           "country": {
                             "value": "Brazil",
                             "confidence": {
@@ -1070,9 +1073,6 @@
                               "South America": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Capybara (Hydrochaeris hydrochaeris)"
                           }
                         },
                         "branch_attrs": {
@@ -1082,13 +1082,13 @@
                     ]
                   },
                   {
-                    "name": "NODE_0000011",
+                    "name": "NODE_0000013",
                     "node_attrs": {
                       "div": 0.00270599,
                       "num_date": {
                         "value": 1997.001,
                         "confidence": [
-                          1990.272,
+                          1990.394,
                           1997.938
                         ]
                       },
@@ -1104,7 +1104,7 @@
                         "confidence": {
                           "South America": 1.0
                         },
-                        "entropy": 0.00252
+                        "entropy": 0.00249
                       }
                     },
                     "branch_attrs": {
@@ -1124,6 +1124,9 @@
                             "inferred": true,
                             "raw_value": "1997-XX-XX"
                           },
+                          "host": {
+                            "value": "Human / Amazonian toxoplasmosis"
+                          },
                           "country": {
                             "value": "French Guiana",
                             "confidence": {
@@ -1137,9 +1140,6 @@
                               "South America": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Human / Amazonian toxoplasmosis"
                           }
                         },
                         "branch_attrs": {
@@ -1147,13 +1147,13 @@
                         }
                       },
                       {
-                        "name": "NODE_0000012",
+                        "name": "NODE_0000014",
                         "node_attrs": {
                           "div": 0.00270599,
                           "num_date": {
-                            "value": 2009.001,
+                            "value": 2007.828,
                             "confidence": [
-                              1994.856,
+                              1995.368,
                               2009.938
                             ]
                           },
@@ -1162,14 +1162,14 @@
                             "confidence": {
                               "French Guiana": 1.0
                             },
-                            "entropy": 4.72e-06
+                            "entropy": 4.71e-06
                           },
                           "region": {
                             "value": "South America",
                             "confidence": {
                               "South America": 1.0
                             },
-                            "entropy": 0.00207
+                            "entropy": 0.00205
                           }
                         },
                         "branch_attrs": {
@@ -1181,13 +1181,16 @@
                             "node_attrs": {
                               "div": 0.00270599,
                               "num_date": {
-                                "value": 2009.757,
+                                "value": 2009.917,
                                 "confidence": [
                                   2009.001,
                                   2009.999
                                 ],
                                 "inferred": true,
                                 "raw_value": "2009-XX-XX"
+                              },
+                              "host": {
+                                "value": "Dog (Canis lupus familiaris)"
                               },
                               "country": {
                                 "value": "French Guiana",
@@ -1202,9 +1205,6 @@
                                   "South America": 1.0
                                 },
                                 "entropy": -1e-12
-                              },
-                              "host": {
-                                "value": "Dog (Canis lupus familiaris)"
                               }
                             },
                             "branch_attrs": {
@@ -1219,10 +1219,13 @@
                                 "value": 2010.001,
                                 "confidence": [
                                   2010.001,
-                                  2010.893
+                                  2010.891
                                 ],
                                 "inferred": true,
                                 "raw_value": "2010-XX-XX"
+                              },
+                              "host": {
+                                "value": "Human / Amazonian toxoplasmosis"
                               },
                               "country": {
                                 "value": "French Guiana",
@@ -1237,9 +1240,6 @@
                                   "South America": 1.0
                                 },
                                 "entropy": -1e-12
-                              },
-                              "host": {
-                                "value": "Human / Amazonian toxoplasmosis"
                               }
                             },
                             "branch_attrs": {
@@ -1251,13 +1251,13 @@
                     ]
                   },
                   {
-                    "name": "NODE_0000005",
+                    "name": "NODE_0000012",
                     "node_attrs": {
                       "div": 0.00541239,
                       "num_date": {
                         "value": 2004.018,
                         "confidence": [
-                          1998.179,
+                          1998.135,
                           2004.938
                         ]
                       },
@@ -1266,17 +1266,17 @@
                         "confidence": {
                           "Brazil": 0.495,
                           "French Guiana": 0.489,
-                          "Guadeloupe": 0.0148,
-                          "Suriname": 0.00124
+                          "Guadeloupe": 0.0145,
+                          "Suriname": 0.00123
                         },
-                        "entropy": 0.77
+                        "entropy": 0.769
                       },
                       "region": {
                         "value": "South America",
                         "confidence": {
                           "South America": 1.0
                         },
-                        "entropy": 0.00133
+                        "entropy": 0.0013
                       }
                     },
                     "branch_attrs": {
@@ -1300,13 +1300,16 @@
                         "node_attrs": {
                           "div": 0.00676505,
                           "num_date": {
-                            "value": 2012.297,
+                            "value": 2012.965,
                             "confidence": [
                               2012.001,
                               2012.999
                             ],
                             "inferred": true,
                             "raw_value": "2012-XX-XX"
+                          },
+                          "host": {
+                            "value": "Human / Amazonian toxoplasmosis"
                           },
                           "country": {
                             "value": "French Guiana",
@@ -1321,9 +1324,6 @@
                               "South America": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Human / Amazonian toxoplasmosis"
                           }
                         },
                         "branch_attrs": {
@@ -1347,6 +1347,9 @@
                             "inferred": true,
                             "raw_value": "2005-XX-XX"
                           },
+                          "host": {
+                            "value": "Human / BMT"
+                          },
                           "country": {
                             "value": "Guadeloupe",
                             "confidence": {
@@ -1360,9 +1363,6 @@
                               "Caribbean": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Human / BMT"
                           }
                         },
                         "branch_attrs": {
@@ -1382,6 +1382,9 @@
                             "inferred": true,
                             "raw_value": "2004-XX-XX"
                           },
+                          "host": {
+                            "value": "Human / Amazonian toxoplasmosis"
+                          },
                           "country": {
                             "value": "Suriname",
                             "confidence": {
@@ -1395,9 +1398,6 @@
                               "South America": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Human / Amazonian toxoplasmosis"
                           }
                         },
                         "branch_attrs": {
@@ -1405,13 +1405,13 @@
                         }
                       },
                       {
-                        "name": "NODE_0000015",
+                        "name": "NODE_0000018",
                         "node_attrs": {
                           "div": 0.00541239,
                           "num_date": {
-                            "value": 2005.828,
+                            "value": 2007.001,
                             "confidence": [
-                              2000.466,
+                              1999.213,
                               2007.938
                             ]
                           },
@@ -1427,7 +1427,7 @@
                             "confidence": {
                               "South America": 1.0
                             },
-                            "entropy": 0.00203
+                            "entropy": 0.00201
                           }
                         },
                         "branch_attrs": {
@@ -1442,10 +1442,13 @@
                                 "value": 2009.001,
                                 "confidence": [
                                   2009.001,
-                                  2009.894
+                                  2009.89
                                 ],
                                 "inferred": true,
                                 "raw_value": "2009-XX-XX"
+                              },
+                              "host": {
+                                "value": "Jaguarundi (Puma yagouaroundi)"
                               },
                               "country": {
                                 "value": "Brazil",
@@ -1460,9 +1463,6 @@
                                   "South America": 1.0
                                 },
                                 "entropy": -1e-12
-                              },
-                              "host": {
-                                "value": "Jaguarundi (Puma yagouaroundi)"
                               }
                             },
                             "branch_attrs": {
@@ -1482,6 +1482,9 @@
                                 "inferred": true,
                                 "raw_value": "2007-XX-XX"
                               },
+                              "host": {
+                                "value": "Chicken (Gallus gallus domesticus)"
+                              },
                               "country": {
                                 "value": "Brazil",
                                 "confidence": {
@@ -1495,9 +1498,6 @@
                                   "South America": 1.0
                                 },
                                 "entropy": -1e-12
-                              },
-                              "host": {
-                                "value": "Chicken (Gallus gallus domesticus)"
                               }
                             },
                             "branch_attrs": {
@@ -1521,7 +1521,7 @@
           "num_date": {
             "value": 2004.001,
             "confidence": [
-              1999.527,
+              1999.762,
               2004.938
             ]
           },
@@ -1538,26 +1538,26 @@
             "confidence": {
               "Europe": 1.0
             },
-            "entropy": 2.19e-09
+            "entropy": 2.17e-09
           }
         },
         "branch_attrs": {
           "mutations": {
             "nuc": [
               "C41T",
+              "A171G",
               "T336C",
-              "C561A",
-              "A576G"
+              "C561A"
             ],
             "GRA6": [
               "H7Y",
+              "K50R",
               "V105A",
-              "P180Q",
-              "D185G"
+              "P180Q"
             ]
           },
           "labels": {
-            "aa": "GRA6: H7Y, V105A, P180Q, D185G"
+            "aa": "GRA6: H7Y, K50R, V105A, P180Q"
           }
         },
         "children": [
@@ -1574,40 +1574,8 @@
                 "inferred": true,
                 "raw_value": "2005-XX-XX"
               },
-              "country": {
-                "value": "Portugal",
-                "confidence": {
-                  "Portugal": 1.0
-                },
-                "entropy": -1e-12
-              },
-              "region": {
-                "value": "Europe",
-                "confidence": {
-                  "Europe": 1.0
-                },
-                "entropy": -1e-12
-              },
               "host": {
                 "value": "Chicken (Gallus gallus domesticus)"
-              }
-            },
-            "branch_attrs": {
-              "mutations": {}
-            }
-          },
-          {
-            "name": "TgPiPr13",
-            "node_attrs": {
-              "div": 0.00542442,
-              "num_date": {
-                "value": 2005.156,
-                "confidence": [
-                  2005.001,
-                  2005.999
-                ],
-                "inferred": true,
-                "raw_value": "2005-XX-XX"
               },
               "country": {
                 "value": "Portugal",
@@ -1622,44 +1590,6 @@
                   "Europe": 1.0
                 },
                 "entropy": -1e-12
-              },
-              "host": {
-                "value": "Pig (Sus scrofa domesticus)"
-              }
-            },
-            "branch_attrs": {
-              "mutations": {}
-            }
-          },
-          {
-            "name": "TgCkAt20",
-            "node_attrs": {
-              "div": 0.00542442,
-              "num_date": {
-                "value": 2004.001,
-                "confidence": [
-                  2004.001,
-                  2004.898
-                ],
-                "inferred": true,
-                "raw_value": "2004-XX-XX"
-              },
-              "country": {
-                "value": "Austria",
-                "confidence": {
-                  "Austria": 1.0
-                },
-                "entropy": -1e-12
-              },
-              "region": {
-                "value": "Europe",
-                "confidence": {
-                  "Europe": 1.0
-                },
-                "entropy": -1e-12
-              },
-              "host": {
-                "value": "Chicken (Gallus gallus domesticus)"
               }
             },
             "branch_attrs": {
@@ -1679,6 +1609,9 @@
                 "inferred": true,
                 "raw_value": "2005-XX-XX"
               },
+              "host": {
+                "value": "Chicken (Gallus gallus domesticus)"
+              },
               "country": {
                 "value": "Portugal",
                 "confidence": {
@@ -1692,9 +1625,6 @@
                   "Europe": 1.0
                 },
                 "entropy": -1e-12
-              },
-              "host": {
-                "value": "Chicken (Gallus gallus domesticus)"
               }
             },
             "branch_attrs": {
@@ -1714,6 +1644,9 @@
                 "inferred": true,
                 "raw_value": "2004-XX-XX"
               },
+              "host": {
+                "value": "Chicken (Gallus gallus domesticus)"
+              },
               "country": {
                 "value": "Austria",
                 "confidence": {
@@ -1727,44 +1660,6 @@
                   "Europe": 1.0
                 },
                 "entropy": -1e-12
-              },
-              "host": {
-                "value": "Chicken (Gallus gallus domesticus)"
-              }
-            },
-            "branch_attrs": {
-              "mutations": {}
-            }
-          },
-          {
-            "name": "TgPiPr09",
-            "node_attrs": {
-              "div": 0.00542442,
-              "num_date": {
-                "value": 2005.156,
-                "confidence": [
-                  2005.001,
-                  2005.999
-                ],
-                "inferred": true,
-                "raw_value": "2005-XX-XX"
-              },
-              "country": {
-                "value": "Portugal",
-                "confidence": {
-                  "Portugal": 1.0
-                },
-                "entropy": -1e-12
-              },
-              "region": {
-                "value": "Europe",
-                "confidence": {
-                  "Europe": 1.0
-                },
-                "entropy": -1e-12
-              },
-              "host": {
-                "value": "Pig (Sus scrofa domesticus)"
               }
             },
             "branch_attrs": {
@@ -1784,6 +1679,9 @@
                 "inferred": true,
                 "raw_value": "2004-XX-XX"
               },
+              "host": {
+                "value": "Chicken (Gallus gallus domesticus)"
+              },
               "country": {
                 "value": "Austria",
                 "confidence": {
@@ -1797,9 +1695,6 @@
                   "Europe": 1.0
                 },
                 "entropy": -1e-12
-              },
-              "host": {
-                "value": "Chicken (Gallus gallus domesticus)"
               }
             },
             "branch_attrs": {
@@ -1807,13 +1702,118 @@
             }
           },
           {
-            "name": "NODE_0000018",
+            "name": "TgCkAt20",
             "node_attrs": {
               "div": 0.00542442,
               "num_date": {
-                "value": 2005.016,
+                "value": 2004.001,
                 "confidence": [
-                  1998.882,
+                  2004.001,
+                  2004.898
+                ],
+                "inferred": true,
+                "raw_value": "2004-XX-XX"
+              },
+              "host": {
+                "value": "Chicken (Gallus gallus domesticus)"
+              },
+              "country": {
+                "value": "Austria",
+                "confidence": {
+                  "Austria": 1.0
+                },
+                "entropy": -1e-12
+              },
+              "region": {
+                "value": "Europe",
+                "confidence": {
+                  "Europe": 1.0
+                },
+                "entropy": -1e-12
+              }
+            },
+            "branch_attrs": {
+              "mutations": {}
+            }
+          },
+          {
+            "name": "TgPiPr13",
+            "node_attrs": {
+              "div": 0.00542442,
+              "num_date": {
+                "value": 2005.156,
+                "confidence": [
+                  2005.001,
+                  2005.999
+                ],
+                "inferred": true,
+                "raw_value": "2005-XX-XX"
+              },
+              "host": {
+                "value": "Pig (Sus scrofa domesticus)"
+              },
+              "country": {
+                "value": "Portugal",
+                "confidence": {
+                  "Portugal": 1.0
+                },
+                "entropy": -1e-12
+              },
+              "region": {
+                "value": "Europe",
+                "confidence": {
+                  "Europe": 1.0
+                },
+                "entropy": -1e-12
+              }
+            },
+            "branch_attrs": {
+              "mutations": {}
+            }
+          },
+          {
+            "name": "TgPiPr09",
+            "node_attrs": {
+              "div": 0.00542442,
+              "num_date": {
+                "value": 2005.156,
+                "confidence": [
+                  2005.001,
+                  2005.999
+                ],
+                "inferred": true,
+                "raw_value": "2005-XX-XX"
+              },
+              "host": {
+                "value": "Pig (Sus scrofa domesticus)"
+              },
+              "country": {
+                "value": "Portugal",
+                "confidence": {
+                  "Portugal": 1.0
+                },
+                "entropy": -1e-12
+              },
+              "region": {
+                "value": "Europe",
+                "confidence": {
+                  "Europe": 1.0
+                },
+                "entropy": -1e-12
+              }
+            },
+            "branch_attrs": {
+              "mutations": {}
+            }
+          },
+          {
+            "name": "NODE_0000020",
+            "node_attrs": {
+              "div": 0.00542442,
+              "num_date": {
+                "value": 2005.329,
+                "confidence": [
+                  1999.006,
                   2007.651
                 ]
               },
@@ -1829,9 +1829,9 @@
                 "value": "Europe",
                 "confidence": {
                   "Europe": 0.996,
-                  "Africa": 0.00323
+                  "Africa": 0.00322
                 },
-                "entropy": 0.0259
+                "entropy": 0.0258
               }
             },
             "branch_attrs": {
@@ -1839,13 +1839,13 @@
             },
             "children": [
               {
-                "name": "NODE_0000020",
+                "name": "NODE_0000021",
                 "node_attrs": {
                   "div": 0.00542442,
                   "num_date": {
-                    "value": 2005.016,
+                    "value": 2005.367,
                     "confidence": [
-                      1999.439,
+                      1998.489,
                       2007.821
                     ]
                   },
@@ -1860,9 +1860,9 @@
                     "value": "Europe",
                     "confidence": {
                       "Europe": 0.996,
-                      "Africa": 0.00365
+                      "Africa": 0.00363
                     },
-                    "entropy": 0.0283
+                    "entropy": 0.0282
                   }
                 },
                 "branch_attrs": {
@@ -1870,13 +1870,13 @@
                 },
                 "children": [
                   {
-                    "name": "NODE_0000021",
+                    "name": "NODE_0000022",
                     "node_attrs": {
                       "div": 0.00542442,
                       "num_date": {
-                        "value": 2007.113,
+                        "value": 2007.001,
                         "confidence": [
-                          1999.494,
+                          1998.672,
                           2007.938
                         ]
                       },
@@ -1891,10 +1891,10 @@
                         "value": "Europe",
                         "confidence": {
                           "Europe": 0.95,
-                          "Africa": 0.0471,
-                          "Caribbean": 0.00136
+                          "Africa": 0.047,
+                          "Caribbean": 0.00135
                         },
-                        "entropy": 0.214
+                        "entropy": 0.213
                       }
                     },
                     "branch_attrs": {
@@ -1902,17 +1902,20 @@
                     },
                     "children": [
                       {
-                        "name": "FR-OVI-ARI021-TgA32088",
+                        "name": "FR-OVI-ARI029-TgA32095",
                         "node_attrs": {
                           "div": 0.00542442,
                           "num_date": {
-                            "value": 2007.113,
+                            "value": 2007.736,
                             "confidence": [
                               2007.001,
                               2007.999
                             ],
                             "inferred": true,
                             "raw_value": "2007-XX-XX"
+                          },
+                          "host": {
+                            "value": "Sheep (Ovis aries)"
                           },
                           "country": {
                             "value": "France ",
@@ -1927,9 +1930,6 @@
                               "Europe": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Sheep (Ovis aries)"
                           }
                         },
                         "branch_attrs": {
@@ -1941,13 +1941,16 @@
                         "node_attrs": {
                           "div": 0.00542442,
                           "num_date": {
-                            "value": 2007.113,
+                            "value": 2007.736,
                             "confidence": [
                               2007.001,
                               2007.999
                             ],
                             "inferred": true,
                             "raw_value": "2007-XX-XX"
+                          },
+                          "host": {
+                            "value": "Chicken (Gallus gallus domesticus)"
                           },
                           "country": {
                             "value": "Gabon",
@@ -1962,9 +1965,6 @@
                               "Africa": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Chicken (Gallus gallus domesticus)"
                           }
                         },
                         "branch_attrs": {
@@ -1974,13 +1974,13 @@
                     ]
                   },
                   {
-                    "name": "NODE_0000022",
+                    "name": "NODE_0000023",
                     "node_attrs": {
                       "div": 0.00542442,
                       "num_date": {
-                        "value": 2007.113,
+                        "value": 2007.001,
                         "confidence": [
-                          1999.494,
+                          1998.672,
                           2007.938
                         ]
                       },
@@ -1996,7 +1996,7 @@
                         "confidence": {
                           "Europe": 1.0
                         },
-                        "entropy": 0.00442
+                        "entropy": 0.0044
                       }
                     },
                     "branch_attrs": {
@@ -2004,17 +2004,20 @@
                     },
                     "children": [
                       {
-                        "name": "FR-OVI-ARI050-TgA32116",
+                        "name": "FR-OVI-ARI021-TgA32088",
                         "node_attrs": {
                           "div": 0.00542442,
                           "num_date": {
-                            "value": 2007.113,
+                            "value": 2007.736,
                             "confidence": [
                               2007.001,
                               2007.999
                             ],
                             "inferred": true,
                             "raw_value": "2007-XX-XX"
+                          },
+                          "host": {
+                            "value": "Sheep (Ovis aries)"
                           },
                           "country": {
                             "value": "France ",
@@ -2029,9 +2032,6 @@
                               "Europe": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Sheep (Ovis aries)"
                           }
                         },
                         "branch_attrs": {
@@ -2039,17 +2039,20 @@
                         }
                       },
                       {
-                        "name": "FR-OVI-ARI029-TgA32095",
+                        "name": "FR-OVI-ARI050-TgA32116",
                         "node_attrs": {
                           "div": 0.00542442,
                           "num_date": {
-                            "value": 2007.113,
+                            "value": 2007.736,
                             "confidence": [
                               2007.001,
                               2007.999
                             ],
                             "inferred": true,
                             "raw_value": "2007-XX-XX"
+                          },
+                          "host": {
+                            "value": "Sheep (Ovis aries)"
                           },
                           "country": {
                             "value": "France ",
@@ -2064,9 +2067,6 @@
                               "Europe": 1.0
                             },
                             "entropy": -1e-12
-                          },
-                          "host": {
-                            "value": "Sheep (Ovis aries)"
                           }
                         },
                         "branch_attrs": {
@@ -2078,13 +2078,13 @@
                 ]
               },
               {
-                "name": "NODE_0000023",
+                "name": "NODE_0000024",
                 "node_attrs": {
                   "div": 0.00542442,
                   "num_date": {
-                    "value": 2005.042,
+                    "value": 2005.624,
                     "confidence": [
-                      1999.592,
+                      1998.565,
                       2007.938
                     ]
                   },
@@ -2100,11 +2100,11 @@
                     "value": "Europe",
                     "confidence": {
                       "Europe": 0.956,
-                      "Africa": 0.0398,
-                      "Asia": 0.00157,
-                      "Caribbean": 0.00148
+                      "Africa": 0.0397,
+                      "Asia": 0.00156,
+                      "Caribbean": 0.00147
                     },
-                    "entropy": 0.197
+                    "entropy": 0.196
                   }
                 },
                 "branch_attrs": {
@@ -2116,13 +2116,16 @@
                     "node_attrs": {
                       "div": 0.00542442,
                       "num_date": {
-                        "value": 2007.307,
+                        "value": 2007.594,
                         "confidence": [
                           2007.001,
                           2007.999
                         ],
                         "inferred": true,
                         "raw_value": "2007-XX-XX"
+                      },
+                      "host": {
+                        "value": "Sheep (Ovis aries)"
                       },
                       "country": {
                         "value": "France ",
@@ -2137,9 +2140,6 @@
                           "Europe": 1.0
                         },
                         "entropy": -1e-12
-                      },
-                      "host": {
-                        "value": "Sheep (Ovis aries)"
                       }
                     },
                     "branch_attrs": {
@@ -2147,14 +2147,14 @@
                     }
                   },
                   {
-                    "name": "NODE_0000024",
+                    "name": "NODE_0000025",
                     "node_attrs": {
                       "div": 0.00542442,
                       "num_date": {
-                        "value": 2007.75,
+                        "value": 2007.759,
                         "confidence": [
-                          1996.785,
-                          2011.459
+                          1996.764,
+                          2011.215
                         ]
                       },
                       "country": {
@@ -2168,13 +2168,13 @@
                       "region": {
                         "value": "Africa",
                         "confidence": {
-                          "Africa": 0.837,
+                          "Africa": 0.838,
                           "Europe": 0.121,
-                          "Asia": 0.0318,
-                          "Caribbean": 0.0048,
-                          "North America": 0.00392
+                          "Asia": 0.0317,
+                          "Caribbean": 0.00478,
+                          "North America": 0.00391
                         },
-                        "entropy": 0.568
+                        "entropy": 0.567
                       }
                     },
                     "branch_attrs": {
@@ -2182,14 +2182,14 @@
                     },
                     "children": [
                       {
-                        "name": "NODE_0000025",
+                        "name": "NODE_0000026",
                         "node_attrs": {
                           "div": 0.00542442,
                           "num_date": {
-                            "value": 2009.456,
+                            "value": 2009.544,
                             "confidence": [
-                              1996.843,
-                              2011.54
+                              1996.824,
+                              2011.48
                             ]
                           },
                           "country": {
@@ -2198,18 +2198,18 @@
                               "Ethiopia": 0.997,
                               "China": 0.00196
                             },
-                            "entropy": 0.0199
+                            "entropy": 0.0198
                           },
                           "region": {
                             "value": "Africa",
                             "confidence": {
                               "Africa": 0.85,
-                              "Asia": 0.109,
-                              "Europe": 0.0334,
-                              "Caribbean": 0.00514,
-                              "North America": 0.0022
+                              "Asia": 0.108,
+                              "Europe": 0.0333,
+                              "Caribbean": 0.00513,
+                              "North America": 0.00219
                             },
-                            "entropy": 0.54
+                            "entropy": 0.539
                           }
                         },
                         "branch_attrs": {
@@ -2217,17 +2217,20 @@
                         },
                         "children": [
                           {
-                            "name": "TgGtEt04",
+                            "name": "TgGtEt02",
                             "node_attrs": {
                               "div": 0.00542442,
                               "num_date": {
-                                "value": 2011.416,
+                                "value": 2011.617,
                                 "confidence": [
                                   2011.001,
                                   2011.999
                                 ],
                                 "inferred": true,
                                 "raw_value": "2011-XX-XX"
+                              },
+                              "host": {
+                                "value": "Goat (Capra aegagrus hircus)"
                               },
                               "country": {
                                 "value": "Ethiopia",
@@ -2242,9 +2245,6 @@
                                   "Africa": 1.0
                                 },
                                 "entropy": -1e-12
-                              },
-                              "host": {
-                                "value": "Goat (Capra aegagrus hircus)"
                               }
                             },
                             "branch_attrs": {
@@ -2252,14 +2252,14 @@
                             }
                           },
                           {
-                            "name": "NODE_0000026",
+                            "name": "NODE_0000027",
                             "node_attrs": {
                               "div": 0.00542442,
                               "num_date": {
-                                "value": 2009.74,
+                                "value": 2009.684,
                                 "confidence": [
-                                  1997.025,
-                                  2013.529
+                                  1997.013,
+                                  2013.25
                                 ]
                               },
                               "country": {
@@ -2273,17 +2273,52 @@
                                 "value": "Asia",
                                 "confidence": {
                                   "Asia": 0.944,
-                                  "Africa": 0.05,
-                                  "Caribbean": 0.00298,
+                                  "Africa": 0.0499,
+                                  "Caribbean": 0.00299,
                                   "Europe": 0.00189
                                 },
-                                "entropy": 0.241
+                                "entropy": 0.24
                               }
                             },
                             "branch_attrs": {
                               "mutations": {}
                             },
                             "children": [
+                              {
+                                "name": "TgCtwh14",
+                                "node_attrs": {
+                                  "div": 0.00542442,
+                                  "num_date": {
+                                    "value": 2013.639,
+                                    "confidence": [
+                                      2013.001,
+                                      2013.999
+                                    ],
+                                    "inferred": true,
+                                    "raw_value": "2013-XX-XX"
+                                  },
+                                  "host": {
+                                    "value": "Cat (Felis silvestris catus)"
+                                  },
+                                  "country": {
+                                    "value": "China",
+                                    "confidence": {
+                                      "China": 1.0
+                                    },
+                                    "entropy": -1e-12
+                                  },
+                                  "region": {
+                                    "value": "Asia",
+                                    "confidence": {
+                                      "Asia": 1.0
+                                    },
+                                    "entropy": -1e-12
+                                  }
+                                },
+                                "branch_attrs": {
+                                  "mutations": {}
+                                }
+                              },
                               {
                                 "name": "TgCatCZg02",
                                 "node_attrs": {
@@ -2292,45 +2327,13 @@
                                     "value": 2014.001,
                                     "confidence": [
                                       2014.001,
-                                      2014.897
+                                      2014.896
                                     ],
                                     "inferred": true,
                                     "raw_value": "2014-XX-XX"
                                   },
-                                  "country": {
-                                    "value": "China",
-                                    "confidence": {
-                                      "China": 1.0
-                                    },
-                                    "entropy": -1e-12
-                                  },
-                                  "region": {
-                                    "value": "Asia",
-                                    "confidence": {
-                                      "Asia": 1.0
-                                    },
-                                    "entropy": -1e-12
-                                  },
                                   "host": {
                                     "value": "Cat (Felis silvestris catus)"
-                                  }
-                                },
-                                "branch_attrs": {
-                                  "mutations": {}
-                                }
-                              },
-                              {
-                                "name": "TgCtwh14",
-                                "node_attrs": {
-                                  "div": 0.00542442,
-                                  "num_date": {
-                                    "value": 2013.443,
-                                    "confidence": [
-                                      2013.001,
-                                      2013.999
-                                    ],
-                                    "inferred": true,
-                                    "raw_value": "2013-XX-XX"
                                   },
                                   "country": {
                                     "value": "China",
@@ -2345,9 +2348,6 @@
                                       "Asia": 1.0
                                     },
                                     "entropy": -1e-12
-                                  },
-                                  "host": {
-                                    "value": "Cat (Felis silvestris catus)"
                                   }
                                 },
                                 "branch_attrs": {
@@ -2359,14 +2359,14 @@
                         ]
                       },
                       {
-                        "name": "NODE_0000027",
+                        "name": "NODE_0000028",
                         "node_attrs": {
                           "div": 0.00542442,
                           "num_date": {
-                            "value": 2009.189,
+                            "value": 2007.759,
                             "confidence": [
-                              1996.852,
-                              2011.389
+                              1997.0,
+                              2011.734
                             ]
                           },
                           "country": {
@@ -2380,12 +2380,12 @@
                             "value": "Africa",
                             "confidence": {
                               "Africa": 0.97,
-                              "Europe": 0.0156,
-                              "North America": 0.00844,
-                              "Asia": 0.00493,
-                              "Caribbean": 0.00109
+                              "Europe": 0.0155,
+                              "North America": 0.0084,
+                              "Asia": 0.00489,
+                              "Caribbean": 0.00108
                             },
-                            "entropy": 0.171
+                            "entropy": 0.17
                           }
                         },
                         "branch_attrs": {
@@ -2393,13 +2393,13 @@
                         },
                         "children": [
                           {
-                            "name": "NODE_0000028",
+                            "name": "NODE_0000029",
                             "node_attrs": {
                               "div": 0.00542442,
                               "num_date": {
-                                "value": 2009.788,
+                                "value": 2009.785,
                                 "confidence": [
-                                  1998.766,
+                                  1998.763,
                                   2011.938
                                 ]
                               },
@@ -2414,12 +2414,12 @@
                                 "value": "Africa",
                                 "confidence": {
                                   "Africa": 0.928,
-                                  "North America": 0.0596,
-                                  "Europe": 0.00661,
-                                  "Asia": 0.00411,
-                                  "Caribbean": 0.00151
+                                  "North America": 0.0594,
+                                  "Europe": 0.00658,
+                                  "Asia": 0.00408,
+                                  "Caribbean": 0.0015
                                 },
-                                "entropy": 0.308
+                                "entropy": 0.307
                               }
                             },
                             "branch_attrs": {
@@ -2431,13 +2431,16 @@
                                 "node_attrs": {
                                   "div": 0.00542442,
                                   "num_date": {
-                                    "value": 2011.846,
+                                    "value": 2011.6,
                                     "confidence": [
                                       2011.001,
                                       2011.999
                                     ],
                                     "inferred": true,
                                     "raw_value": "2011-XX-XX"
+                                  },
+                                  "host": {
+                                    "value": "White-tailed deer (Odocoileus virginianus)"
                                   },
                                   "country": {
                                     "value": "USA",
@@ -2452,9 +2455,6 @@
                                       "North America": 1.0
                                     },
                                     "entropy": -1e-12
-                                  },
-                                  "host": {
-                                    "value": "White-tailed deer (Odocoileus virginianus)"
                                   }
                                 },
                                 "branch_attrs": {
@@ -2462,17 +2462,20 @@
                                 }
                               },
                               {
-                                "name": "TgGtEt01",
+                                "name": "TgGtEt04",
                                 "node_attrs": {
                                   "div": 0.00542442,
                                   "num_date": {
-                                    "value": 2011.846,
+                                    "value": 2011.6,
                                     "confidence": [
                                       2011.001,
                                       2011.999
                                     ],
                                     "inferred": true,
                                     "raw_value": "2011-XX-XX"
+                                  },
+                                  "host": {
+                                    "value": "Goat (Capra aegagrus hircus)"
                                   },
                                   "country": {
                                     "value": "Ethiopia",
@@ -2487,9 +2490,6 @@
                                       "Africa": 1.0
                                     },
                                     "entropy": -1e-12
-                                  },
-                                  "host": {
-                                    "value": "Goat (Capra aegagrus hircus)"
                                   }
                                 },
                                 "branch_attrs": {
@@ -2499,13 +2499,13 @@
                             ]
                           },
                           {
-                            "name": "NODE_0000029",
+                            "name": "NODE_0000030",
                             "node_attrs": {
                               "div": 0.00542442,
                               "num_date": {
-                                "value": 2009.788,
+                                "value": 2009.785,
                                 "confidence": [
-                                  1998.766,
+                                  1998.763,
                                   2011.938
                                 ]
                               },
@@ -2514,15 +2514,15 @@
                                 "confidence": {
                                   "Ethiopia": 1.0
                                 },
-                                "entropy": 2.8e-07
+                                "entropy": 2.79e-07
                               },
                               "region": {
                                 "value": "Africa",
                                 "confidence": {
                                   "Africa": 0.998,
-                                  "Europe": 0.00115
+                                  "Europe": 0.00114
                                 },
-                                "entropy": 0.0201
+                                "entropy": 0.0199
                               }
                             },
                             "branch_attrs": {
@@ -2530,17 +2530,20 @@
                             },
                             "children": [
                               {
-                                "name": "TgGtEt02",
+                                "name": "TgGtEt01",
                                 "node_attrs": {
                                   "div": 0.00542442,
                                   "num_date": {
-                                    "value": 2011.846,
+                                    "value": 2011.6,
                                     "confidence": [
                                       2011.001,
                                       2011.999
                                     ],
                                     "inferred": true,
                                     "raw_value": "2011-XX-XX"
+                                  },
+                                  "host": {
+                                    "value": "Goat (Capra aegagrus hircus)"
                                   },
                                   "country": {
                                     "value": "Ethiopia",
@@ -2555,9 +2558,6 @@
                                       "Africa": 1.0
                                     },
                                     "entropy": -1e-12
-                                  },
-                                  "host": {
-                                    "value": "Goat (Capra aegagrus hircus)"
                                   }
                                 },
                                 "branch_attrs": {
@@ -2569,13 +2569,16 @@
                                 "node_attrs": {
                                   "div": 0.00542442,
                                   "num_date": {
-                                    "value": 2011.846,
+                                    "value": 2011.6,
                                     "confidence": [
                                       2011.001,
                                       2011.999
                                     ],
                                     "inferred": true,
                                     "raw_value": "2011-XX-XX"
+                                  },
+                                  "host": {
+                                    "value": "Goat (Capra aegagrus hircus)"
                                   },
                                   "country": {
                                     "value": "Ethiopia",
@@ -2590,9 +2593,6 @@
                                       "Africa": 1.0
                                     },
                                     "entropy": -1e-12
-                                  },
-                                  "host": {
-                                    "value": "Goat (Capra aegagrus hircus)"
                                   }
                                 },
                                 "branch_attrs": {

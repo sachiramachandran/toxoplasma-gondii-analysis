@@ -107,7 +107,7 @@
         ]
       },
       "aa_sequences": {
-        "GRA6": "MAHGGIHLRQKRNFCPLTVSTVAVVFVVFMGVLVNSLGGVAVAADSGGVRQTPSETGSSGGQQEAVGTTEDYVNSSAMGGGQGDSLAEDDTTSDAAEGDVDPFPVLANEGKSEARGPSLEERIEEQGTRRRYSSVQEPQAKVPSKRTQKRHRLIGAVVLAVSVAMLTAFFLRRTGRRSPPEPSGDGGGNDAGNNAGNGGNXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        "GRA6": "MAHGGIHLRQKRNFCPLTVSTVAVVFVVFMGVLVNSLGGVAVAADSGGVKQTPSETGSSGGQQEAVGTTEDYVNSSAMGGGQGDSLAEDDTTSDAAEGDVDPFPVLANEGKSEARGPSLEERIEEQGTRRRYSSVQEPQAKVPSKRTQKRHRLIGAVVLAVSVAMLTAFFLRRTGRRSPPEPSGGGGGNDAGNNAGNGGNXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       }
     },
     "NODE_0000001": {
@@ -121,16 +121,13 @@
     "NODE_0000004": {
       "aa_muts": {
         "GRA6": [
-          "G186D"
+          "K50Q"
         ]
       }
     },
     "NODE_0000005": {
       "aa_muts": {
-        "GRA6": [
-          "G47D",
-          "T92A"
-        ]
+        "GRA6": []
       }
     },
     "NODE_0000006": {
@@ -138,12 +135,14 @@
         "GRA6": []
       }
     },
-    "NODE_0000008": {
+    "NODE_0000007": {
       "aa_muts": {
-        "GRA6": []
+        "GRA6": [
+          "G186D"
+        ]
       }
     },
-    "NODE_0000010": {
+    "NODE_0000008": {
       "aa_muts": {
         "GRA6": []
       }
@@ -155,7 +154,10 @@
     },
     "NODE_0000012": {
       "aa_muts": {
-        "GRA6": []
+        "GRA6": [
+          "G47D",
+          "T92A"
+        ]
       }
     },
     "NODE_0000013": {
@@ -165,20 +167,13 @@
     },
     "NODE_0000014": {
       "aa_muts": {
-        "GRA6": [
-          "K50Q"
-        ]
-      }
-    },
-    "NODE_0000015": {
-      "aa_muts": {
         "GRA6": []
       }
     },
     "NODE_0000016": {
       "aa_muts": {
         "GRA6": [
-          "R50K"
+          "G185D"
         ]
       }
     },
@@ -200,9 +195,9 @@
       "aa_muts": {
         "GRA6": [
           "H7Y",
+          "K50R",
           "V105A",
-          "P180Q",
-          "D185G"
+          "P180Q"
         ]
       }
     },
@@ -252,6 +247,11 @@
       }
     },
     "NODE_0000029": {
+      "aa_muts": {
+        "GRA6": []
+      }
+    },
+    "NODE_0000030": {
       "aa_muts": {
         "GRA6": []
       }
@@ -393,6 +393,6 @@
     }
   },
   "reference": {
-    "GRA6": "MAHGGIHLRQKRNFCPLTVSTVAVVFVVFMGVLVNSLGGVAVAADSGGVRQTPSETGSSGGQQEAVGTTEDYVNSSAMGGGQGDSLAEDDTTSDAAEGDVDPFPVLANEGKSEARGPSLEERIEEQGTRRRYSSVQEPQAKVPSKRTQKRHRLIGAVVLAVSVAMLTAFFLRRTGRRSPPEPSGDGGGNDAGNNAGNGGNEGRGYRGRGEGGGEDDRRALHPGSVNVFDY*"
+    "GRA6": "MAHGGIHLRQKRNFCPLTVSTVAVVFVVFMGVLVNSLGGVAVAADSGGVKQTPSETGSSGGQQEAVGTTEDYVNSSAMGGGQGDSLAEDDTTSDAAEGDVDPFPVLANEGKSEARGPSLEERIEEQGTRRRYSSVQEPQAKVPSKRTQKRHRLIGAVVLAVSVAMLTAFFLRRTGRRSPPEPSGGGGGNDAGNNAGNGGNEGRGYRGRGEGGGEDDRRALHPGSVNVFDY*"
   }
 }
