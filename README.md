@@ -4,7 +4,7 @@ NextStrain Framework for Toxoplasma gondii GRA6
 
 
 Follow steps to installing NextStrain software:
-https://docs.nextstrain.org/en/latest/install.html 
+https://docs.nextstrain.org/en/latest/install.html
 
 Run sample phylogenetic workflow:
 https://docs.nextstrain.org/en/latest/tutorials/running-a-phylogenetic-workflow.html
@@ -27,6 +27,5 @@ Snakefile (changes needed are written in green)
 "Explain the steps for the repository"
 
 \```bash
-nextstrain 
-build . 
+nextstrain build .
 \```
