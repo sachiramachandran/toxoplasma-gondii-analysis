@@ -5,16 +5,20 @@ SEQUENCE_TABLE_PATH = 'data/book2_sequence.fasta'
 METADATA_PATH = 'data/toxo_rflp_1662_metadata.tsv'
 OUTPUT_FASTA_PATH = 'results/sequences_for_augur.fasta'
 
+# ... (rest of the imports/paths) ...
+
 try:
+    # 1. Load the tabular sequence data (assuming clean headers now)
     sequence_table = pd.read_csv(SEQUENCE_TABLE_PATH, sep='\t')
+    # Create a dictionary mapping the 'strain' column to the 'Seq' column by name
     sequence_map = sequence_table.set_index('strain')['Seq'].to_dict()
 
     metadata = pd.read_csv(METADATA_PATH, sep='\t')
 
     with open(OUTPUT_FASTA_PATH, 'w') as f:
         for index, row in metadata.iterrows():
-            strain_id = row['IDs'] 
-            seq_key = row['strain'] 
+            strain_id = row['IDs']
+            seq_key = row['strain']
 
             if seq_key in sequence_map:
                 sequence = sequence_map[seq_key]
