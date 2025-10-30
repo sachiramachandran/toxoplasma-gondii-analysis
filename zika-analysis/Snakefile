@@ -66,7 +66,7 @@ rule align:
           - filling gaps with N
         """
     input:
-        sequences = rules.filter.output.sequences,
+        sequences = rules.filter.output[0],
         reference = reference
     output:
         alignment = "results/aligned.fasta"
