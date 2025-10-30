@@ -1,9 +1,9 @@
 rule all:
     input:
-        auspice_json = "auspice/toxoplasma.json",  # <-- CHANGED: Output filename
+        auspice_json = "auspice/book2_sequence.json",  # <-- CHANGED: Output filename
 
-input_fasta = "data/toxoplasma.fasta",          # <-- CHANGED: Your sequence file name
-input_metadata = "data/toxoplasma_metadata.tsv",  # <-- CHANGED: Your metadata file name
+input_fasta = "data/book2_sequence.fasta",          # <-- CHANGED: Your sequence file name
+input_metadata = "data/toxo_rflp_1662_metadata.tsv",  # <-- CHANGED: Your metadata file name
 dropped_strains = "config/dropped_strains.txt",
 # New outgroup in config folder
 reference = "config/ToxoplasmaOutgroup.gb", # <-- CHANGED: Your reference file name
