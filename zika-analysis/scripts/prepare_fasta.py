@@ -8,11 +8,18 @@ OUTPUT_FASTA_PATH = 'results/sequences_for_augur.fasta'
 # ... (rest of the imports/paths) ...
 
 try:
-    # 1. Load the tabular sequence data (assuming clean headers now)
-    sequence_table = pd.read_csv(SEQUENCE_TABLE_PATH, sep='\t')
-    # Create a dictionary mapping the 'strain' column to the 'Seq' column by name
+    # 1. Load the tabular sequence data (using flexible separator detection)
+    # Using sep=None, engine='python' lets pandas try to figure out the spacing/tabs.
+    sequence_table = pd.read_csv(SEQUENCE_TABLE_PATH, sep=None, engine='python')
+
+    # --- DEBUG LINE ---
+    print(f"DEBUG: Columns found in sequence file: {sequence_table.columns.tolist()}", file=sys.stderr)
+    # ------------------
+
+    # Map strain (ID) to sequence ('Seq'). We try to use the name 'strain' and 'Seq'.
     sequence_map = sequence_table.set_index('strain')['Seq'].to_dict()
 
+    # 2. Load the metadata
     metadata = pd.read_csv(METADATA_PATH, sep='\t')
 
     with open(OUTPUT_FASTA_PATH, 'w') as f:
