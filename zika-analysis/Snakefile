@@ -11,6 +11,15 @@ colors = "config/colors.tsv",
 lat_longs = "config/lat_longs.tsv",
 auspice_config = "config/auspice_config.json"
 
+rule prepare_sequences:
+    input:
+        sequence_table = "data/book2_sequence.fasta",
+        metadata = "data/toxo_rflp_1662_metadata.tsv"
+    output:
+        fasta = "results/sequences_for_augur.fasta"
+    shell:
+        "python scripts/prepare_fasta.py"
+
 rule index_sequences:
     message:
         """
@@ -29,25 +38,14 @@ rule index_sequences:
         """
 
 rule filter:
-    message:
-        """
-        Filtering to
-          - {params.sequences_per_group} sequence(s) per {params.group_by!s}
-          - from {params.min_date} onwards
-          - excluding strains in {input.exclude}
-        """
     input:
-        sequences = input_fasta,
+        # **MODIFIED:** This now takes the output of the 'prepare_sequences' rule
+        sequences = "results/sequences_for_augur.fasta",
         sequence_index = "results/sequence_index.tsv",
-        metadata = input_metadata,
-        exclude = dropped_strains
+        metadata = "data/toxo_rflp_1662_metadata.tsv",
+        exclude = "config/dropped_strains.txt"
     output:
-        sequences = "results/filtered.fasta"
-    params:
-        group_by = "year",
-        sequences_per_group = 50,       #   changed params according to dataset
-        min_date = 1970
-    conda: "envs/nextstrain.yaml"
+        "results/filtered.fasta"
     shell:
         """
         augur filter \
@@ -55,10 +53,10 @@ rule filter:
             --sequence-index {input.sequence_index} \
             --metadata {input.metadata} \
             --exclude {input.exclude} \
-            --output {output.sequences} \
-            --group-by {params.group_by} \
-            --sequences-per-group {params.sequences_per_group} \
-            --min-date {params.min_date}
+            --output {output} \
+            --group-by year \
+            --sequences-per-group 50 \
+            --min-date 1970
         """
 
 rule align:
