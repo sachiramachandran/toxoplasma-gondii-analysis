@@ -26,18 +26,6 @@ try:
         # ... (FASTA generation logic that references 'IDs' and 'strain') ...
 
 # ... (the rest of the script, including the except blocks, remains) ...
-
-    with open(OUTPUT_FASTA_PATH, 'w') as f:
-        for index, row in metadata.iterrows():
-            strain_id = row['IDs']
-            seq_key = row['strain']
-
-            if seq_key in sequence_map:
-                sequence = sequence_map[seq_key]
-                f.write(f">{strain_id}\n{sequence}\n")
-            else:
-                sys.stderr.write(f"Warning: No sequence found for key: {seq_key} (Metadata ID: {strain_id})\n")
-
 except FileNotFoundError as e:
     sys.stderr.write(f"Error: Required file not found: {e.filename}\n")
     sys.exit(1)
