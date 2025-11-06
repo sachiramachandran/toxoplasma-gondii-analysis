@@ -15,13 +15,8 @@ try:
 
     # 2. Load the metadata: Use regex for separator to handle multiple spaces/tabs (Universal Whitespace Separator)
     # This will load the file, but will create many extra columns that need merging.
-    metadata = pd.read_csv(
-        METADATA_PATH,
-        sep=r'\s+',  # This regex treats ANY sequence of whitespace (tabs/spaces) as a single separator
-        engine='python',
-        header=0,
-        names=None # Use existing header
-    )
+# 2. Load the metadata
+    metadata = pd.read_csv(METADATA_PATH, sep='\t')
 
     # --- DEBUG LINE ADDED ---
     print(f"DEBUG: Columns found in METADATA file after aggressive load: {metadata.columns.tolist()}", file=sys.stderr)
