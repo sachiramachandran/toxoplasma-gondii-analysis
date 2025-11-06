@@ -6,12 +6,19 @@ SEQUENCE_TABLE_PATH = 'data/book2_sequence.fasta'
 METADATA_PATH = 'data/toxoplasma_metadata.tsv'
 OUTPUT_FASTA_PATH = 'results/sequences_for_augur.fasta'
 
+# ... (in scripts/prepare_fasta.py) ...
 try:
-    # 1. Load the sequence data (now confirmed working)
+    # 1. Load the sequence data
     sequence_table = pd.read_csv(SEQUENCE_TABLE_PATH, sep=None, engine='python')
+
+    # *** FIX: STRIP WHITESPACE FROM SEQUENCE FILE COLUMN NAMES ***
+    sequence_table.columns = sequence_table.columns.str.strip()
+    # ************************************************************
+
+    # This line should now work if the column is present and was just spaced out
     sequence_map = sequence_table.set_index('strain')['Seq'].to_dict()
 
-    # 2. Load the metadata (Now using the clean file name)
+    # 2. Load the metadata (Now clean and confirmed working)
     metadata = pd.read_csv(METADATA_PATH, sep='\t')
 
     # *** FINAL FIX: STRIP WHITESPACE FROM COLUMN NAMES ***
