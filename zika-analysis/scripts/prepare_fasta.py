@@ -2,7 +2,7 @@ import pandas as pd
 import sys
 
 SEQUENCE_TABLE_PATH = 'data/book2_sequence.fasta'
-METADATA_PATH = 'data/toxo_rflp_1662_metadata.tsv'
+METADATA_PATH = 'data/toxoplasma_metadata.tsv'
 OUTPUT_FASTA_PATH = 'results/sequences_for_augur.fasta'
 
 # ... (rest of the imports/paths) ...
