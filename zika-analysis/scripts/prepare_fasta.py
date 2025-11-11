@@ -2,7 +2,7 @@ import pandas as pd
 import sys
 
 # Define file paths based on the Snakemake rule inputs/outputs
-SEQUENCE_TABLE_PATH = 'data/book2_sequence.fasta'
+SEQUENCE_TABLE_PATH = 'data/toxo_expansion.txt'
 METADATA_PATH = 'data/toxoplasma_metadata.tsv'
 OUTPUT_FASTA_PATH = 'results/sequences_for_augur.fasta'
 
