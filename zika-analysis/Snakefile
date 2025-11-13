@@ -3,7 +3,7 @@ rule all:
         auspice_json = "auspice/book2_sequence.json",  # <-- CHANGED: Output filename
 
 input_fasta = "data/toxo_expansion.txt",          # <-- CHANGED: Your sequence file name
-input_metadata = "data/toxoplasma_metadata.tsv",  # <-- CHANGED: Your metadata file name
+input_metadata = "data/toxo_meta2.tsv",  # <-- CHANGED: Your metadata file name
 dropped_strains = "config/dropped_strains.txt",
 # New outgroup in config folder
 reference = "config/ToxoplasmaOutgroup.gb", # <-- CHANGED: Your reference file name
