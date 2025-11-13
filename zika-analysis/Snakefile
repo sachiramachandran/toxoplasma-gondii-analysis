@@ -14,7 +14,7 @@ auspice_config = "config/auspice_config.json"
 rule prepare_sequences:
     input:
         sequence_table = "data/book2_sequence.fasta",
-        metadata = "data/toxoplasma_metadata.tsv"
+        metadata = "data/toxo_meta2.tsv"
     output:
         fasta = "results/sequences_for_augur.fasta"
     shell:
