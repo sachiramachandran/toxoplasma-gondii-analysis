@@ -3,7 +3,7 @@ import sys
 
 # Define file paths
 SEQUENCE_TABLE_PATH = 'data/toxo_expansion.txt'
-METADATA_PATH = 'data/toxo_meta2.tsv'
+METADATA_PATH = 'data/toxo_meta3.tsv'
 OUTPUT_FASTA_PATH = 'results/sequences_for_augur.fasta'
 
 try:

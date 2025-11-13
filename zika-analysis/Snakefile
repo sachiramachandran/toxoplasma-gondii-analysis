@@ -3,7 +3,7 @@ rule all:
         auspice_json = "auspice/book2_sequence.json",  # <-- CHANGED: Output filename
 
 input_fasta = "data/toxo_expansion.txt",          # <-- CHANGED: Your sequence file name
-input_metadata = "data/toxo_meta2.tsv",  # <-- CHANGED: Your metadata file name
+input_metadata = "data/toxo_meta3.tsv",  # <-- CHANGED: Your metadata file name
 dropped_strains = "config/dropped_strains.txt",
 # New outgroup in config folder
 reference = "config/ToxoplasmaOutgroup.gb", # <-- CHANGED: Your reference file name
@@ -14,7 +14,7 @@ auspice_config = "config/auspice_config.json"
 rule prepare_sequences:
     input:
         sequence_table = "data/book2_sequence.fasta",
-        metadata = "data/toxo_meta2.tsv"
+        metadata = "data/toxo_meta3.tsv"
     output:
         fasta = "results/sequences_for_augur.fasta"
     shell:
@@ -42,7 +42,7 @@ rule filter:
         # **MODIFIED:** This now takes the output of the 'prepare_sequences' rule
         sequences = "results/sequences_for_augur.fasta",
         sequence_index = "results/sequence_index.tsv",
-        metadata = "data/toxo_meta2.tsv",
+        metadata = "data/toxo_meta3.tsv",
         exclude = "config/dropped_strains.txt"
     output:
         "results/filtered.fasta"
