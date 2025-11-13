@@ -42,7 +42,7 @@ rule filter:
         # **MODIFIED:** This now takes the output of the 'prepare_sequences' rule
         sequences = "results/sequences_for_augur.fasta",
         sequence_index = "results/sequence_index.tsv",
-        metadata = "data/toxoplasma_metadata.tsv",
+        metadata = "data/toxo_meta2.tsv",
         exclude = "config/dropped_strains.txt"
     output:
         "results/filtered.fasta"
