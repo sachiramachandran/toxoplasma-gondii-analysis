@@ -122,7 +122,7 @@ rule refine:
             --output-tree {output.tree} \
             --output-node-data {output.node_data} \
             --timetree \
-            --coalescent {params.coalescent} \
+            --coalescent {params.coalescent constant .} \
             --date-confidence \
             --date-inference {params.date_inference} \
             --clock-filter-iqd {params.clock_filter_iqd}
