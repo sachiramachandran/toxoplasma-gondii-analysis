@@ -126,7 +126,7 @@ rule refine:
             --date-confidence \
             --date-inference {params.date_inference} \
             --clock-filter-iqd {params.clock_filter_iqd}
-            ----clock-rate 1e-7
+            --clock-rate 1e-7
         """
 
 rule ancestral:
