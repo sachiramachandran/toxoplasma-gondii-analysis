@@ -17,8 +17,6 @@ rule prepare_sequences:
         metadata = "data/toxo_meta3.tsv"
     output:
         fasta = "data/toxoplasma_sequences.fasta"
-    shell:
-        "python scripts/prepare_fasta.py"
 
 rule index_sequences:
     message:
@@ -40,7 +38,7 @@ rule index_sequences:
 rule filter:
     input:
         # **MODIFIED:** This now takes the output of the 'prepare_sequences' rule
-        sequences = "results/sequences_for_augur.fasta",
+        sequences = "data/toxoplasma_sequences.fasta",
         sequence_index = "results/sequence_index.tsv",
         metadata = "data/toxo_meta3.tsv",
         exclude = "config/dropped_strains.txt"
