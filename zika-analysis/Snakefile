@@ -16,7 +16,7 @@ rule prepare_sequences:
         sequence_table = "data/book2_sequence.fasta",
         metadata = "data/toxo_meta3.tsv"
     output:
-        fasta = "results/sequences_for_augur.fasta"
+        fasta = "data/toxoplasma_sequences.fasta"
     shell:
         "python scripts/prepare_fasta.py"
 
