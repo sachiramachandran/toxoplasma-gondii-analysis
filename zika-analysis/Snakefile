@@ -122,12 +122,12 @@ rule refine:
             --output-tree {output.tree} \
             --output-node-data {output.node_data} \
             --timetree \
-            --coalescent opt \
+            --coalescent {params.coalescent} \
             --date-confidence \
             --date-inference {params.date_inference} \
             --clock-filter-iqd {params.clock_filter_iqd} \
             --clock-rate 1e-7 \
-            --keep root
+            --keep-root
         """
 
 rule ancestral:
