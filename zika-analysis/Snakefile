@@ -111,7 +111,8 @@ rule refine:
     params:
         coalescent = "opt",
         date_inference = "marginal",
-        clock_filter_iqd = 8
+        clock_rate = 0.0008
+            clock_std_dev = 0.0002,
     conda: "envs/nextstrain.yaml"
     shell:
         """
@@ -125,9 +126,9 @@ rule refine:
             --coalescent {params.coalescent} \
             --date-confidence \
             --date-inference {params.date_inference} \
-            --clock-filter-iqd {params.clock_filter_iqd} \
-            --clock-rate 1e-7 \
-            --keep-root
+            --clock-rate {params.clock_rate} \
+            --clock-std-dev {params.clock_std_dev} \
+            --keep-root \
         """
 
 rule ancestral:
