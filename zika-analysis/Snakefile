@@ -36,13 +36,18 @@ rule index_sequences:
 
 rule filter:
     input:
-        # **MODIFIED:** This now takes the output of the 'prepare_sequences' rule
         sequences = "data/toxoplasma_sequences.fasta",
         sequence_index = "results/sequence_index.tsv",
         metadata = "data/toxo_meta3.tsv",
         exclude = "config/dropped_strains.txt"
     output:
-        "results/filtered.fasta"
+        filtered_fasta = "results/filtered.fasta",
+        # 🆕 ADDED: Output metadata for only the strains that pass the filter
+        filtered_metadata = "results/filtered_metadata.tsv",
+        # 🆕 ADDED: Output a simple list of strains that passed
+        passed_strains = "results/passed_strains.txt",
+        # 🆕 ADDED: CRUCIAL LOG FILE for dropped strains and reasons
+        filter_log = "logs/filter_log.tsv"
     shell:
         """
         augur filter \
@@ -50,7 +55,13 @@ rule filter:
             --sequence-index {input.sequence_index} \
             --metadata {input.metadata} \
             --exclude {input.exclude} \
-            --output {output} \
+            --output {output.filtered_fasta} \
+            \
+            # 🆕 ADDED: Output files to help with debugging
+            --output-metadata {output.filtered_metadata} \
+            --output-strains {output.passed_strains} \
+            --output-log {output.filter_log} \
+            \
             --group-by year \
             --sequences-per-group 50 \
             --min-date 1970
