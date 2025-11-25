@@ -111,7 +111,7 @@ rule refine:
     params:
         coalescent = "opt",
         date_inference = "marginal",
-        clock_rate = 0.0008
+        clock_rate = 0.0008,
             clock_std_dev = 0.0002,
     conda: "envs/nextstrain.yaml"
     shell:
