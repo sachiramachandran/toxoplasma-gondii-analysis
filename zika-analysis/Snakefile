@@ -1,15 +1,21 @@
 rule all:
     input:
-        auspice_json = "auspice/toxoplasma.json",  # <-- CHANGED: Output filename
+        auspice_json = "auspice/toxo_expansion.json",  # <-- CHANGED: Output filename
 
-input_fasta = "data/toxoplasma.fasta",          # <-- CHANGED: Your sequence file name
-input_metadata = "data/toxoplasma_metadata.tsv",  # <-- CHANGED: Your metadata file name
+input_fasta = "data/toxoplasma_sequences.fasta",          # <-- CHANGED: Your sequence file name
+input_metadata = "data/toxo_meta3.tsv",  # <-- CHANGED: Your metadata file name
 dropped_strains = "config/dropped_strains.txt",
-# New outgroup in config folder
 reference = "config/ToxoplasmaOutgroup.gb", # <-- CHANGED: Your reference file name
 colors = "config/colors.tsv",
-lat_longs = "config/lat_longs.tsv",
+lat_longs = "config/lat_longs2.tsv",
 auspice_config = "config/auspice_config.json"
+
+rule prepare_sequences:
+    input:
+        sequence_table = "data/book2_sequence.fasta",
+        metadata = "data/toxo_meta3.tsv"
+    output:
+        fasta = "data/toxoplasma_sequences.fasta"
 
 rule index_sequences:
     message:
@@ -29,25 +35,19 @@ rule index_sequences:
         """
 
 rule filter:
-    message:
-        """
-        Filtering to
-          - {params.sequences_per_group} sequence(s) per {params.group_by!s}
-          - from {params.min_date} onwards
-          - excluding strains in {input.exclude}
-        """
     input:
-        sequences = input_fasta,
+        sequences = "data/toxoplasma_sequences.fasta",
         sequence_index = "results/sequence_index.tsv",
-        metadata = input_metadata,
-        exclude = dropped_strains
+        metadata = "data/toxo_meta3.tsv",
+        exclude = "config/dropped_strains.txt"
     output:
-        sequences = "results/filtered.fasta"
-    params:
-        group_by = "year",
-        sequences_per_group = 50,       #   changed params according to dataset
-        min_date = 1970
-    conda: "envs/nextstrain.yaml"
+        filtered_fasta = "results/filtered.fasta",
+        # 🆕 ADDED: Output metadata for only the strains that pass the filter
+        filtered_metadata = "results/filtered_metadata.tsv",
+        # 🆕 ADDED: Output a simple list of strains that passed
+        passed_strains = "results/passed_strains.txt",
+        # 🆕 ADDED: CRUCIAL LOG FILE for dropped strains and reasons
+        filter_log = "logs/filter_log.tsv"
     shell:
         """
         augur filter \
@@ -55,10 +55,16 @@ rule filter:
             --sequence-index {input.sequence_index} \
             --metadata {input.metadata} \
             --exclude {input.exclude} \
-            --output {output.sequences} \
-            --group-by {params.group_by} \
-            --sequences-per-group {params.sequences_per_group} \
-            --min-date {params.min_date}
+            --output {output.filtered_fasta} \
+            \
+            # 🆕 ADDED: Output files to help with debugging
+            --output-metadata {output.filtered_metadata} \
+            --output-strains {output.passed_strains} \
+            --output-log {output.filter_log} \
+            \
+            --group-by year \
+            --sequences-per-group 50 \
+            --min-date 1970
         """
 
 rule align:
@@ -68,7 +74,7 @@ rule align:
           - filling gaps with N
         """
     input:
-        sequences = rules.filter.output.sequences,
+        sequences = rules.filter.output[0],
         reference = reference
     output:
         alignment = "results/aligned.fasta"
@@ -115,7 +121,9 @@ rule refine:
     params:
         coalescent = "opt",
         date_inference = "marginal",
-        clock_filter_iqd = 4
+        clock_rate = 0.0008,
+            clock_std_dev = 0.0002,
+            clock_filter_iqd = 4
     conda: "envs/nextstrain.yaml"
     shell:
         """
@@ -129,7 +137,10 @@ rule refine:
             --coalescent {params.coalescent} \
             --date-confidence \
             --date-inference {params.date_inference} \
-            --clock-filter-iqd {params.clock_filter_iqd}
+            --clock-rate {params.clock_rate} \
+            --clock-std-dev {params.clock_std_dev} \
+            --clock-filter-iqd {params.clock_filter_iqd} \
+            --keep-root \
         """
 
 rule ancestral:
@@ -177,7 +188,7 @@ rule traits:
     output:
         node_data = "results/traits.json",
     params:
-        columns = "region country"
+        columns = "country"
     conda: "envs/nextstrain.yaml"
     shell:
         """
