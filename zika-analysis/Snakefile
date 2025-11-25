@@ -8,7 +8,7 @@ dropped_strains = "config/dropped_strains.txt",
 # New outgroup in config folder
 reference = "config/ToxoplasmaOutgroup.gb", # <-- CHANGED: Your reference file name
 colors = "config/colors.tsv",
-lat_longs = "config/lat_longs.tsv",
+lat_longs = "config/lat_longs2.tsv",
 auspice_config = "config/auspice_config.json"
 
 rule prepare_sequences:
