@@ -1,8 +1,8 @@
 rule all:
     input:
-        auspice_json = "auspice/book2_sequence.json",  # <-- CHANGED: Output filename
+        auspice_json = "auspice/toxo_expansion.json",  # <-- CHANGED: Output filename
 
-input_fasta = "data/toxo_expansion.txt",          # <-- CHANGED: Your sequence file name
+input_fasta = "data/toxoplasma_sequences.fasta",          # <-- CHANGED: Your sequence file name
 input_metadata = "data/toxo_meta3.tsv",  # <-- CHANGED: Your metadata file name
 dropped_strains = "config/dropped_strains.txt",
 # New outgroup in config folder
@@ -16,9 +16,7 @@ rule prepare_sequences:
         sequence_table = "data/book2_sequence.fasta",
         metadata = "data/toxo_meta3.tsv"
     output:
-        fasta = "results/sequences_for_augur.fasta"
-    shell:
-        "python scripts/prepare_fasta.py"
+        fasta = "data/toxoplasma_sequences.fasta"
 
 rule index_sequences:
     message:
@@ -40,7 +38,7 @@ rule index_sequences:
 rule filter:
     input:
         # **MODIFIED:** This now takes the output of the 'prepare_sequences' rule
-        sequences = "results/sequences_for_augur.fasta",
+        sequences = "data/toxoplasma_sequences.fasta",
         sequence_index = "results/sequence_index.tsv",
         metadata = "data/toxo_meta3.tsv",
         exclude = "config/dropped_strains.txt"
@@ -113,7 +111,9 @@ rule refine:
     params:
         coalescent = "opt",
         date_inference = "marginal",
-        clock_filter_iqd = 4
+        clock_rate = 0.0008,
+            clock_std_dev = 0.0002,
+            clock_filter_iqd = 4
     conda: "envs/nextstrain.yaml"
     shell:
         """
@@ -127,7 +127,10 @@ rule refine:
             --coalescent {params.coalescent} \
             --date-confidence \
             --date-inference {params.date_inference} \
-            --clock-filter-iqd {params.clock_filter_iqd}
+            --clock-rate {params.clock_rate} \
+            --clock-std-dev {params.clock_std_dev} \
+            --clock-filter-iqd {params.clock_filter_iqd} \
+            --keep-root \
         """
 
 rule ancestral:
