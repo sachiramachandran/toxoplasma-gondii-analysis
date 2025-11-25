@@ -5,7 +5,6 @@ rule all:
 input_fasta = "data/toxoplasma_sequences.fasta",          # <-- CHANGED: Your sequence file name
 input_metadata = "data/toxo_meta3.tsv",  # <-- CHANGED: Your metadata file name
 dropped_strains = "config/dropped_strains.txt",
-# New outgroup in config folder
 reference = "config/ToxoplasmaOutgroup.gb", # <-- CHANGED: Your reference file name
 colors = "config/colors.tsv",
 lat_longs = "config/lat_longs2.tsv",
