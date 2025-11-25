@@ -1,6 +1,6 @@
 rule all:
     input:
-        auspice_json = "auspice/book2_sequence.json",  # <-- CHANGED: Output filename
+        auspice_json = "auspice/toxo_expansion.json",  # <-- CHANGED: Output filename
 
 input_fasta = "data/toxoplasma_sequences.fasta",          # <-- CHANGED: Your sequence file name
 input_metadata = "data/toxo_meta3.tsv",  # <-- CHANGED: Your metadata file name
