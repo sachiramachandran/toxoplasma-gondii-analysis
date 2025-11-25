@@ -129,6 +129,7 @@ rule refine:
             --date-inference {params.date_inference} \
             --clock-rate {params.clock_rate} \
             --clock-std-dev {params.clock_std_dev} \
+            --clock-filter-iqd {params.clock_filter_iqd} \
             --keep-root \
         """
 
