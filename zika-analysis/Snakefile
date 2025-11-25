@@ -113,7 +113,7 @@ rule refine:
         date_inference = "marginal",
         clock_rate = 0.0008,
             clock_std_dev = 0.0002,
-            clock_filter_iqd = 6
+            clock_filter_iqd = 4
     conda: "envs/nextstrain.yaml"
     shell:
         """
