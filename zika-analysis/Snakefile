@@ -63,8 +63,8 @@ rule filter:
             --output-log {output.filter_log} \
             \
             --group-by year \
-            --sequences-per-group 50 \
-            --min-date 1970
+            --sequences-per-group 500 \  #loosen the sequences per group to 50 to retain more sequences
+            --min-date 1908 #check format of date and make sure this isnt constraining
         """
 
 rule align:
