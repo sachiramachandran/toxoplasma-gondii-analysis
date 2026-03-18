@@ -12,7 +12,7 @@
     { "key": "city", "title": "City", "type": "categorical" },
     { "key": "date", "title": "Date", "type": "continuous" },
     { "key": "MAT_titer", "title": "MAT Titer", "type": "continuous" },
-    { "key": "mortality%", "title": "Mortality Rate", "type": "continuous" },
+    { "key": "mortality_percent", "title": "Mortality Rate", "type": "continuous" },
     { "key": "Reference", "title": "Source/Reference", "type": "categorical" }
   ],
   "geo_resolutions": [
