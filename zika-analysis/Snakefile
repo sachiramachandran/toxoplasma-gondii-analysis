@@ -42,11 +42,8 @@ rule filter:
         exclude = "config/dropped_strains.txt"
     output:
         filtered_fasta = "results/filtered.fasta",
-        # 🆕 ADDED: Output metadata for only the strains that pass the filter
         filtered_metadata = "results/filtered_metadata.tsv",
-        # 🆕 ADDED: Output a simple list of strains that passed
         passed_strains = "results/passed_strains.txt",
-        # 🆕 ADDED: CRUCIAL LOG FILE for dropped strains and reasons
         filter_log = "logs/filter_log.tsv"
     shell:
         """
