@@ -41,7 +41,7 @@ rule filter:
         metadata = "data/toxo_meta3.tsv",
         exclude = "config/dropped_strains.txt"
     output:
-        filtered_fasta = "results/filtered.fasta",
+        sequences = "results/filtered.fasta",
         filtered_metadata = "results/filtered_metadata.tsv",
         passed_strains = "results/passed_strains.txt",
         filter_log = "logs/filter_log.tsv"
@@ -52,16 +52,13 @@ rule filter:
             --sequence-index {input.sequence_index} \
             --metadata {input.metadata} \
             --exclude {input.exclude} \
-            --output {output.filtered_fasta} \
-            \
-            # 🆕 ADDED: Output files to help with debugging
+            --output-sequences {output.sequences} \
             --output-metadata {output.filtered_metadata} \
             --output-strains {output.passed_strains} \
             --output-log {output.filter_log} \
-            \
             --group-by year \
-            --sequences-per-group 500 \  #loosen the sequences per group to 50 to retain more sequences
-            --min-date 1908 #check format of date and make sure this isnt constraining
+            --sequences-per-group 500 \
+            --min-date 1908
         """
 
 rule align:
