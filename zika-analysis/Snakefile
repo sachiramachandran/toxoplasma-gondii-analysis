@@ -210,7 +210,7 @@ rule export:
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
         colors = colors,
-        lat_longs = lat_longs2,
+        lat_longs = lat_longs,
         auspice_config = auspice_config
     output:
         auspice_json = rules.all.input.auspice_json,
