@@ -4,30 +4,16 @@
     {"name": "Carissa Lucas, Sachi Ramachandran, Dr. Chunlei Su", "url": ""}
   ],
   "build_url": "https://github.com/nextstrain/zika-tutorial",
-  "colorings": [
-    {
-      "key": "gt",
-      "title": "Genotype",
-      "type": "categorical"
-    },
-    {
-      "key": "num_date",
-      "title": "Date",
-      "type": "continuous"
-    },
-    {
-      "key": "host",
-      "title": "Host",
-      "type": "categorical"
-    },
-    {
-      "key": "country",
-      "title": "Country",
-      "type": "categorical"
-    },
-    {
-      
-    }
+"colorings": [
+    { "key": "genotype", "title": "Genotype", "type": "categorical" },
+    { "key": "host", "title": "Host", "type": "categorical" },
+    { "key": "region", "title": "Region", "type": "categorical" },
+    { "key": "country", "title": "Country", "type": "categorical" },
+    { "key": "city", "title": "City", "type": "categorical" },
+    { "key": "date", "title": "Date", "type": "continuous" },
+    { "key": "MAT_titer", "title": "MAT Titer", "type": "continuous" },
+    { "key": "mortality%", "title": "Mortality Rate", "type": "continuous" },
+    { "key": "Reference", "title": "Source/Reference", "type": "categorical" }
   ],
   "geo_resolutions": [
     "country"
