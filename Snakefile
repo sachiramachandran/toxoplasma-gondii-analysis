@@ -1,21 +1,34 @@
+# Nextstrain build for Toxoplasma gondii GRA6.
+#
+# Adapted from nextstrain/zika-tutorial. Run from the repository root:
+#
+#     nextstrain build --docker .
+#
+# The Snakefile lives at the root rather than inside toxo-analysis/ so that the
+# build can write auspice/toxoplasma-gondii-analysis.json. nextstrain.org
+# serves community builds from auspice/<repo-name>.json on the default branch,
+# and the Docker runtime mounts only the build directory — a Snakefile inside
+# toxo-analysis/ could not reach the root auspice/ at all.
+
+# Inputs, all relative to the repository root.
+input_fasta     = "toxo-analysis/data/toxoplasma_sequences.fasta"
+input_metadata  = "toxo-analysis/data/toxo_meta3.tsv"
+dropped_strains = "toxo-analysis/config/dropped_strains.txt"
+reference       = "toxo-analysis/config/ToxoplasmaOutgroup.gb"
+colors          = "toxo-analysis/config/colors.tsv"
+lat_longs       = "toxo-analysis/config/lat_longs.tsv"
+auspice_config  = "toxo-analysis/config/auspice_config.json"
+
+# Generated files.
+results = "toxo-analysis/results"
+logs    = "toxo-analysis/logs"
+auspice = "auspice"
+
+
 rule all:
     input:
-        auspice_json = "auspice/toxo_expansion.json",  # <-- CHANGED: Output filename
+        auspice_json = f"{auspice}/toxoplasma-gondii-analysis.json"
 
-input_fasta = "data/toxoplasma_sequences.fasta",          # <-- CHANGED: Your sequence file name
-input_metadata = "data/toxo_meta3.tsv",  # <-- CHANGED: Your metadata file name
-dropped_strains = "config/dropped_strains.txt",
-reference = "config/ToxoplasmaOutgroup.gb", # <-- CHANGED: Your reference file name
-colors = "config/colors.tsv",
-lat_longs = "config/lat_longs2.tsv",
-auspice_config = "config/auspice_config.json"
-
-rule prepare_sequences:
-    input:
-        sequence_table = "data/book2_sequence.fasta",
-        metadata = "data/toxo_meta3.tsv"
-    output:
-        fasta = "data/toxoplasma_sequences.fasta"
 
 rule index_sequences:
     message:
@@ -25,8 +38,7 @@ rule index_sequences:
     input:
         sequences = input_fasta
     output:
-        sequence_index = "results/sequence_index.tsv"
-    conda: "envs/nextstrain.yaml"
+        sequence_index = f"{results}/sequence_index.tsv"
     shell:
         """
         augur index \
@@ -35,16 +47,26 @@ rule index_sequences:
         """
 
 rule filter:
+    message:
+        """
+        Filtering sequences.
+
+        --min-date and --sequences-per-group are inherited from the Zika
+        tutorial and are no-ops for this dataset: collection dates run
+        1989-2018 and no year holds more than 500 isolates, so all 1,662
+        sequences pass. They are kept so the thresholds are explicit if the
+        dataset grows.
+        """
     input:
-        sequences = "data/toxoplasma_sequences.fasta",
-        sequence_index = "results/sequence_index.tsv",
-        metadata = "data/toxo_meta3.tsv",
-        exclude = "config/dropped_strains.txt"
+        sequences = rules.index_sequences.input.sequences,
+        sequence_index = rules.index_sequences.output.sequence_index,
+        metadata = input_metadata,
+        exclude = dropped_strains
     output:
-        sequences = "results/filtered.fasta",
-        filtered_metadata = "results/filtered_metadata.tsv",
-        passed_strains = "results/passed_strains.txt",
-        filter_log = "logs/filter_log.tsv"
+        sequences = f"{results}/filtered.fasta",
+        filtered_metadata = f"{results}/filtered_metadata.tsv",
+        passed_strains = f"{results}/passed_strains.txt",
+        filter_log = f"{logs}/filter_log.tsv"
     shell:
         """
         augur filter \
@@ -68,11 +90,10 @@ rule align:
           - filling gaps with N
         """
     input:
-        sequences = rules.filter.output[0],
+        sequences = rules.filter.output.sequences,
         reference = reference
     output:
-        alignment = "results/aligned.fasta"
-    conda: "envs/nextstrain.yaml"
+        alignment = f"{results}/aligned.fasta"
     shell:
         """
         augur align \
@@ -87,8 +108,7 @@ rule tree:
     input:
         alignment = rules.align.output.alignment
     output:
-        tree = "results/tree_raw.nwk"
-    conda: "envs/nextstrain.yaml"
+        tree = f"{results}/tree_raw.nwk"
     shell:
         """
         augur tree \
@@ -104,21 +124,23 @@ rule refine:
           - use {params.coalescent} coalescent timescale
           - estimate {params.date_inference} node dates
           - filter tips more than {params.clock_filter_iqd} IQDs from clock expectation
+
+        The clock rate is retuned for a 297 bp protozoan locus; the tutorial's
+        defaults assume a whole RNA virus genome.
         """
     input:
         tree = rules.tree.output.tree,
-        alignment = rules.align.output,
+        alignment = rules.align.output.alignment,
         metadata = input_metadata
     output:
-        tree = "results/tree.nwk",
-        node_data = "results/branch_lengths.json"
+        tree = f"{results}/tree.nwk",
+        node_data = f"{results}/branch_lengths.json"
     params:
         coalescent = "opt",
         date_inference = "marginal",
         clock_rate = 0.0008,
-            clock_std_dev = 0.0002,
-            clock_filter_iqd = 4
-    conda: "envs/nextstrain.yaml"
+        clock_std_dev = 0.0002,
+        clock_filter_iqd = 4
     shell:
         """
         augur refine \
@@ -134,19 +156,18 @@ rule refine:
             --clock-rate {params.clock_rate} \
             --clock-std-dev {params.clock_std_dev} \
             --clock-filter-iqd {params.clock_filter_iqd} \
-            --keep-root \
+            --keep-root
         """
 
 rule ancestral:
     message: "Reconstructing ancestral sequences and mutations"
     input:
         tree = rules.refine.output.tree,
-        alignment = rules.align.output
+        alignment = rules.align.output.alignment
     output:
-        node_data = "results/nt_muts.json"
+        node_data = f"{results}/nt_muts.json"
     params:
         inference = "joint"
-    conda: "envs/nextstrain.yaml"
     shell:
         """
         augur ancestral \
@@ -163,15 +184,14 @@ rule translate:
         node_data = rules.ancestral.output.node_data,
         reference = reference
     output:
-        node_data = "results/aa_muts.json"
-    conda: "envs/nextstrain.yaml"
+        node_data = f"{results}/aa_muts.json"
     shell:
         """
         augur translate \
             --tree {input.tree} \
             --ancestral-sequences {input.node_data} \
             --reference-sequence {input.reference} \
-            --output-node-data {output.node_data} \
+            --output-node-data {output.node_data}
         """
 
 rule traits:
@@ -180,10 +200,9 @@ rule traits:
         tree = rules.refine.output.tree,
         metadata = input_metadata
     output:
-        node_data = "results/traits.json",
+        node_data = f"{results}/traits.json"
     params:
         columns = "country"
-    conda: "envs/nextstrain.yaml"
     shell:
         """
         augur traits \
@@ -195,7 +214,7 @@ rule traits:
         """
 
 rule export:
-    message: "Exporting data files for for auspice"
+    message: "Exporting data files for auspice"
     input:
         tree = rules.refine.output.tree,
         metadata = input_metadata,
@@ -207,8 +226,7 @@ rule export:
         lat_longs = lat_longs,
         auspice_config = auspice_config
     output:
-        auspice_json = rules.all.input.auspice_json,
-    conda: "envs/nextstrain.yaml"
+        auspice_json = rules.all.input.auspice_json
     shell:
         """
         augur export v2 \
@@ -225,7 +243,7 @@ rule export:
 rule clean:
     message: "Removing directories: {params}"
     params:
-        "results ",
-        "auspice"
+        results,
+        logs
     shell:
         "rm -rfv {params}"

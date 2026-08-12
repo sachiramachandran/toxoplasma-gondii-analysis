@@ -1,33 +1,578 @@
-Country	 Chile       	 #6495ED 	 	 
-Country	 Brazil      	 #00295B 	 	 
-Country	 Egypt       	 #800517	 	 
-Country	 USA         	 #FF8200 	 	 
-Country	 Sri Lanka   	 #FDEFB2 	 	 
-Country	 Grenada     	 #FED8B1 	 	 
-Country	 Turkey      	 #48A860 	 	 
-Country	 Guyana      	 #79BAEC 	 	 
-Country	 Vietnam     	 #EDC001 	 	 
-Country	 Burkina Faso	 #B22222 	 	 
-Country	 Kenya       	 #C24641 	 	 
-Country	 Mali        	 #C32148 	 	 
-Country	 Plateau     	 #FF0000 	 	 
-Country	 Columbia    	 #023E8A 	 	 
-Country	 Ghana       	 #ED2939 	 	 
-Country	 Indonesia   	 #FFDA03 	 	 
-Country	 St Kitts    	 #FAB972 	 	 
-Country	 Italy       	 #4B5320 	 	 
-Country	 Puerto Rico 	 #F4AB6A 	 	 
-Country	 Poland      	 #708238 	 	 
-Country	 Costa Rica  	 #6E6F71 	 	 
-Country	 Canada      	 #FFBD31 	 	 
-Country	 Mexico      	 #CC5500 	 	 
-Country	 Ethiopia    	 #E55451 	 	 
-Country	 Svalbard    	 #98FB98 	 	 
-Country	 Guatemala   	 #A1AEB1 	 	 
-Country	 Nicaragua   	 #A3AABE 	 	 
-Country	 Peru        	 #48CAE4 	 	 
-Country	 Venezuela   	 #ADE8F4 	 	 
-Country	 Israel      	 #00A86B 	 	 
-Country	 Portugal    	 #3F704D 	 	 
-Country	 Austria     	 #1A2421 	 	 
-Country	 China       	 #FFE135 	 	 
+country	Brazil	#C62F2F
+country	USA	#C6492F
+country	Egypt	#C6632F
+country	Austria	#C67D2F
+country	China	#C6972F
+country	Nicaragua	#C6B12F
+country	Colombia	#C2C62F
+country	Costa Rica	#A8C62F
+country	Ethiopia	#8EC62F
+country	Guyana	#74C62F
+country	Svalbard	#5AC62F
+country	Grenada	#40C62F
+country	Sri Lanka	#2FC637
+country	Chile	#2FC651
+country	Turkey	#2FC66B
+country	Portugal	#2FC685
+country	Mexico	#2FC69F
+country	Puerto Rico	#2FC6B9
+country	Vietnam	#2FB9C6
+country	Israel	#2F9FC6
+country	St. Kitts	#2F85C6
+country	Venezuela	#2F6BC6
+country	Argentina	#2F51C6
+country	Canada	#2F37C6
+country	Congo	#402FC6
+country	Peru	#5A2FC6
+country	Mali	#742FC6
+country	Guatemala	#8E2FC6
+country	Italy	#A82FC6
+country	Ghana	#C22FC6
+country	Poland	#C62FB1
+country	Burkina Faso	#C62F97
+country	Indonesia	#C62F7D
+country	Kenya	#C62F63
+country	Plateau	#C62F49
+region	South America	#DB2823
+region	North America	#DE752F
+region	Africa	#CEB541
+region	Asia	#447CCD
+region	Europe	#E39B39
+region	Central America	#B4BD4C
+region	Caribbean	#63AC9A
+region	Arctic	#8ACDEA
+region	Hawaii	#7EB876
+city	Abou Rawash	#7CC0C0
+city	Osceola - Iowa	#7CBFC0
+city	Massachusetts	#7CBDC0
+city	Baltimore/ Maryland	#7CBCC0
+city	Rio de Janeiro	#7CBAC0
+city	Maryland	#7CB9C0
+city	Minnesota	#7CB7C0
+city	Addis Ababa	#7CB6C0
+city	Bogota	#7CB4C0
+city	Wies	#7CB3C0
+city	Santa Isabel do Ivai	#7CB2C0
+city	Fernando de Noronha	#7CB0C0
+city	Sri Lanka	#7CAFC0
+city	Colatina	#7CADC0
+city	Abou-rawash	#7CACC0
+city	Monte Negro	#7CAAC0
+city	Sao Paulo city	#7CA9C0
+city	China	#7CA7C0
+city	San Jose	#7CA6C0
+city	Liaoning Province	#7CA5C0
+city	Northwestern Maryland	#7CA3C0
+city	Honalulu	#7CA2C0
+city	Northeast Parana state	#7CA0C0
+city	Patos	#7C9FC0
+city	Illinois	#7C9DC0
+city	Eldorado	#7C9CC0
+city	Karsiyaka	#7C9AC0
+city	Mona Island	#7C99C0
+city	Parana	#7C98C0
+city	Tololos	#7C96C0
+city	Aquidauana	#7C95C0
+city	Ilheus- Itabuna	#7C93C0
+city	J + K	#7C92C0
+city	Konak	#7C90C0
+city	campos dos goytacazes	#7C8FC0
+city	Dane	#7C8EC0
+city	Durango	#7C8CC0
+city	Guangzhou	#7C8BC0
+city	Iowa	#7C89C0
+city	Londrina	#7C88C0
+city	Malta	#7C86C0
+city	Marechal Floriano	#7C85C0
+city	Santarem - Para	#7C83C0
+city	Sao Paulo	#7C82C0
+city	Cordeiropolis	#7C81C0
+city	Espirito Santo do Pinhal	#7C7FC0
+city	Manquehue	#7C7EC0
+city	Pelotas	#7C7CC0
+city	Trovolhue	#7E7CC0
+city	Andradina	#7F7CC0
+city	Bad Gleichenberg	#817CC0
+city	El-Beheira Governorate	#827CC0
+city	Esperanca	#837CC0
+city	Groß St. Florian	#857CC0
+city	Jerusalem	#867CC0
+city	Pirassununga	#887CC0
+city	Sabana Grande de Monay	#897CC0
+city	St Andrew	#8B7CC0
+city	Albergaria-a-Velha	#8C7CC0
+city	Alpena	#8E7CC0
+city	Bueno Aires City	#8F7CC0
+city	Ceara	#907CC0
+city	Cosmorama	#927CC0
+city	East Feliciana	#937CC0
+city	Feira de Santana	#957CC0
+city	Gallia (OH)	#967CC0
+city	La Cruz	#987CC0
+city	Riegersburg	#997CC0
+city	San Nicolas	#9A7CC0
+city	Santare´m	#9C7CC0
+city	St John	#9D7CC0
+city	Canguc¸u	#9F7CC0
+city	Conchas	#A07CC0
+city	Guaira	#A27CC0
+city	Heredia	#A37CC0
+city	Linhares	#A57CC0
+city	Monteiro	#A67CC0
+city	Olho d' agua	#A77CC0
+city	Ribeirao Preto	#A97CC0
+city	San Juan de Miraflores	#AA7CC0
+city	St David	#AC7CC0
+city	St Patrick	#AD7CC0
+city	Yazoo (MS)	#AF7CC0
+city	Aracatuba	#B07CC0
+city	Armenia	#B27CC0
+city	Bahia	#B37CC0
+city	Barcelos	#B47CC0
+city	Desha (AR)	#B67CC0
+city	El Sauce	#B77CC0
+city	Guarapari	#B97CC0
+city	Los Chiles	#BA7CC0
+city	Mahaica	#BC7CC0
+city	Mosteiro (Vila do Conde)	#BD7CC0
+city	Panales	#BF7CC0
+city	Rio Grande	#C07CC0
+city	Rio Grande do Norte	#C07CBF
+city	Sao Jose do Rio Preto	#C07CBD
+city	Sao Paulo City	#C07CBC
+city	St Georges	#C07CBA
+city	State of Mexico	#C07CB9
+city	Valparaiso	#C07CB7
+city	Vila Velha	#C07CB6
+city	Chicot (AR)	#C07CB4
+city	Clallam	#C07CB3
+city	Essex	#C07CB2
+city	Georgetown (SC)	#C07CB0
+city	Gioia del Colle	#C07CAF
+city	Guatemala	#C07CAD
+city	Jefferson/ Kalaloch beach	#C07CAC
+city	Lawrence (IN)	#C07CAA
+city	Manitoba	#C07CA9
+city	Metropolitana de Belo Horizonte	#C07CA7
+city	Oeste de Minas	#C07CA6
+city	Onverwagt	#C07CA5
+city	Santa Isabel	#C07CA3
+city	Soesdyke	#C07CA2
+city	Sul/Sudoeste de Minas	#C07CA0
+city	Triangulo Mineiro/ Alto do Paranaiba	#C07C9F
+city	Union (AR)	#C07C9D
+city	Vale do Jequitinhonha	#C07C9C
+city	Vernon	#C07C9A
+city	Zona da Mata	#C07C99
+city	Agua Branca	#C07C98
+city	Alagoas	#C07C96
+city	Alajuela	#C07C95
+city	Bel Air Estate	#C07C93
+city	Castanhal	#C07C92
+city	Chesapeake City (VA)	#C07C90
+city	Confresa	#C07C8F
+city	Cottage	#C07C8E
+city	Cuyahoga	#C07C8C
+city	Dan Amstel	#C07C8B
+city	El Espana	#C07C89
+city	Grays Harbor/ Copalis beach	#C07C88
+city	Grays Harbor/ Roosevelt beach	#C07C86
+city	Greene	#C07C85
+city	Ithaca	#C07C83
+city	Jaboticabal	#C07C82
+city	Kartuzy/ Pomeranian Province	#C07C81
+city	Kumasi	#C07C7F
+city	La Suiza	#C07C7E
+city	Laguneta	#C07C7C
+city	Lee (VA)	#C07E7C
+city	Maranha˜o	#C07F7C
+city	Masina	#C0817C
+city	Mon Repos	#C0827C
+city	Niagara	#C0837C
+city	Norte de Minas	#C0857C
+city	Orleans (LA)	#C0867C
+city	Osasco	#C0887C
+city	Palma	#C0897C
+city	Panales 2	#C08B7C
+city	Paradise	#C08C7C
+city	Pernambuco	#C08E7C
+city	Porter	#C08F7C
+city	Quixaba	#C0907C
+city	Salvador	#C0927C
+city	Santa Cruz	#C0937C
+city	Santa Teresa	#C0957C
+city	St Mark	#C0967C
+city	Tan An LA	#C0987C
+city	Terra Alta	#C0997C
+city	Tillman (OK)	#C09A7C
+city	Unterbergla	#C09C7C
+city	Vale do Rio Doce	#C09D7C
+city	Valle San Antonio	#C09F7C
+city	Vreed-en-Hoop	#C0A07C
+city	Wismar	#C0A27C
+city	Zes Kinderen	#C0A37C
+city	Araraquara	#C0A57C
+city	Areial	#C0A67C
+city	Azores Island	#C0A77C
+city	Balc¸ova	#C0A97C
+city	Bay (MI)	#C0AA7C
+city	Bedford (PA)	#C0AC7C
+city	Belladrum	#C0AD7C
+city	Ben Cat BD	#C0AF7C
+city	Bien Hoa DN	#C0B07C
+city	Bladen (NC)	#C0B27C
+city	Bossier	#C0B37C
+city	Bourbon (KS)	#C0B47C
+city	British Columbia	#C0B67C
+city	Bush Lot	#C0B77C
+city	Campina Grande	#C0B97C
+city	Cangucu	#C0BA7C
+city	Capao do Leao	#C0BC7C
+city	Capa˜o do Lea˜o	#C0BD7C
+city	Central Mineira	#C0BF7C
+city	Changning Hunan	#C0C07C
+city	Choctaw (OK)	#BFC07C
+city	Chol-Chol-1	#BDC07C
+city	Clallam/ Shi shi beach	#BCC07C
+city	Clay	#BAC07C
+city	Clinton (NY)	#B9C07C
+city	Colina	#B7C07C
+city	Colombus (NC)	#B6C07C
+city	Coosa	#B4C07C
+city	Costa Rica	#B3C07C
+city	Culpepper (VA)	#B2C07C
+city	Dong Xaoi BH	#B0C07C
+city	Du Page (IL)	#AFC07C
+city	Duplin (NC)	#ADC07C
+city	Dutchess	#ACC07C
+city	Estacion	#AAC07C
+city	Fulton (IL)	#A9C07C
+city	Fulton (PA)	#A7C07C
+city	Georgetown area	#A6C07C
+city	Gibraltar	#A5C07C
+city	Grays Harbor/ 1 st beach	#A3C07C
+city	Grays Harbor/ Bonge beach	#A2C07C
+city	Grays Harbor/ Bottle beach	#A0C07C
+city	Grays Harbor/ Damon road beach	#9FC07C
+city	Grays Harbor/ Moclips beach	#9DC07C
+city	Grays Harbor/ Ocean city beach	#9CC07C
+city	Grays Harbor/ Pacific beach	#9AC07C
+city	Grays Harbor/ Quinault beach	#99C07C
+city	Gwinnett	#98C07C
+city	Hemphill (TX)	#96C07C
+city	Hennepin	#95C07C
+city	Herval	#93C07C
+city	Huzhu	#92C07C
+city	Iberville	#90C07C
+city	Inhangapi	#8FC07C
+city	Jaborandi	#8EC07C
+city	Jackson (OH)	#8CC07C
+city	Jaguarao	#8BC07C
+city	Jefferson/ Olympic national park beach	#89C07C
+city	Jewell	#88C07C
+city	Jingyuan Gansu	#86C07C
+city	Kalawao (HI)	#85C07C
+city	Kinshasa	#83C07C
+city	Kisumu	#82C07C
+city	Kuujjuaq	#81C07C
+city	Labranza	#7FC07C
+city	Lake Manitoba	#7EC07C
+city	Limete	#7CC07C
+city	Long Thanh DN	#7CC07E
+city	Lorain (OH)	#7CC07F
+city	Marilia	#7CC081
+city	Marituba	#7CC082
+city	Marquette (MI)	#7CC083
+city	Midland (MI)	#7CC085
+city	Moc Hoa LA	#7CC086
+city	Mohave (AZ)	#7CC088
+city	Montgomery (AL)	#7CC089
+city	Netos (Figueira da Foz)	#7CC08B
+city	Nevada (CA)	#7CC08C
+city	New Jersey	#7CC08E
+city	Ngaliema	#7CC08F
+city	Noroeste de Minas	#7CC090
+city	Nueva Imperial	#7CC092
+city	Olho d' Agua	#7CC093
+city	Pacific/ Cape disappointment state park	#7CC095
+city	Panyu Guangdong	#7CC096
+city	Pasco (FL)	#7CC098
+city	Pavon	#7CC099
+city	Phillips (AR)	#7CC09A
+city	Piratini	#7CC09C
+city	Pooled Tissues	#7CC09D
+city	Pooled chicken tissues	#7CC09F
+city	Province Central Java subdistrict Muntilan	#7CC0A0
+city	Recife	#7CC0A2
+city	Reynolds (MO)	#7CC0A3
+city	Sao Jose do Bonfim	#7CC0A5
+city	Scott	#7CC0A6
+city	Sergipe	#7CC0A7
+city	Serra	#7CC0A9
+city	Shanghai	#7CC0AA
+city	Sharkey (MS)	#7CC0AC
+city	Tallapoosa	#7CC0AD
+city	Tangshan Nanjing	#7CC0AF
+city	Teodoro Smith	#7CC0B0
+city	Thuan An BD	#7CC0B2
+city	Uberlandia	#7CC0B3
+city	Union	#7CC0B4
+city	Victoria	#7CC0B6
+city	Vom	#7CC0B7
+city	Wabaunsee	#7CC0B9
+city	Washington (IN)	#7CC0BA
+city	West Feliciana (LA)	#7CC0BC
+city	Zengcheng	#7CC0BD
+city	Zhejiang	#7CC0BF
+host	Chicken	#5BC059
+host	Cat	#59C067
+host	Pig	#59C077
+host	Dog	#59C087
+host	Feral Pig	#59C098
+host	Sheep	#59C0A8
+host	white tailed deer	#59C0B8
+host	Capybara	#59B7C0
+host	Fox	#59A7C0
+host	Goat	#5996C0
+host	Wolf	#5986C0
+host	Sea otter	#5976C0
+host	Sea Otter	#5966C0
+host	Chickens	#5C59C0
+host	Canada goose	#6C59C0
+host	Eared dove	#7D59C0
+host	Raccoon	#8D59C0
+host	Coyote	#9D59C0
+host	Nine-banded armadillo	#AE59C0
+host	White-lipped peccary	#BE59C0
+host	Collared anteater	#C059B2
+host	Human	#C059A1
+host	Cattle Egret	#C05991
+host	Six banded-armadillo	#C05981
+host	Skunk	#C05970
+host	Spotted paca	#C05960
+host	Black Bear	#C06159
+host	Black Howler monkey	#C07259
+host	Cougar	#C08259
+host	Cow	#C09259
+host	Dolphin	#C0A359
+host	Goose	#C0B359
+host	Hoary fox	#BDC059
+host	Maned wolf	#ACC059
+host	Oncilla	#9CC059
+host	Red-winged tinamou	#8CC059
+host	Toucan	#7BC059
+host	coyote	#6BC059
+genotype	3	#D99126
+genotype	2	#D99626
+genotype	1	#D99B26
+genotype	5	#D9A126
+genotype	4	#D9A626
+genotype	9	#D9AB26
+genotype	13	#D9B026
+genotype	6	#D9B526
+genotype	8	#D9BA26
+genotype	7	#D9BF26
+genotype	20	#D9C426
+genotype	11	#D9C926
+genotype	108	#D9CE26
+genotype	24	#D9D326
+genotype	14	#D9D826
+genotype	146	#D4D926
+genotype	19	#CFD926
+genotype	17	#CAD926
+genotype	10	#C5D926
+genotype	12	#C0D926
+genotype	15	#BBD926
+genotype	16	#B6D926
+genotype	21	#B1D926
+genotype	18	#ACD926
+genotype	48	#A7D926
+genotype	162	#A2D926
+genotype	206	#9DD926
+genotype	22	#98D926
+genotype	23	#93D926
+genotype	34	#8ED926
+genotype	116	#89D926
+genotype	33	#84D926
+genotype	39	#7ED926
+genotype	41	#79D926
+genotype	172	#74D926
+genotype	25	#6FD926
+genotype	26	#6AD926
+genotype	36	#65D926
+genotype	53	#60D926
+genotype	109	#5BD926
+genotype	122	#56D926
+genotype	27	#51D926
+genotype	273	#4CD926
+genotype	29	#47D926
+genotype	30	#42D926
+genotype	31	#3DD926
+genotype	32	#38D926
+genotype	74	#33D926
+genotype	123	#2ED926
+genotype	175	#29D926
+genotype	254	#26D929
+genotype	28	#26D92E
+genotype	35	#26D933
+genotype	37	#26D938
+genotype	38	#26D93D
+genotype	40	#26D942
+genotype	65	#26D947
+genotype	67	#26D94C
+genotype	111	#26D951
+genotype	195	#26D956
+genotype	213	#26D95B
+genotype	221	#26D961
+genotype	235	#26D966
+genotype	277	#26D96B
+genotype	42	#26D970
+genotype	43	#26D975
+genotype	44	#26D97A
+genotype	45	#26D97F
+genotype	46	#26D984
+genotype	47	#26D989
+genotype	49	#26D98E
+genotype	50	#26D993
+genotype	51	#26D998
+genotype	52	#26D99D
+genotype	54	#26D9A2
+genotype	73	#26D9A7
+genotype	75	#26D9AC
+genotype	88	#26D9B1
+genotype	114	#26D9B6
+genotype	118	#26D9BB
+genotype	157	#26D9C1
+genotype	167	#26D9C6
+genotype	169	#26D9CB
+genotype	182	#26D9D0
+genotype	187	#26D9D5
+genotype	216	#26D8D9
+genotype	231	#26D3D9
+genotype	272	#26CED9
+genotype	274	#26C9D9
+genotype	289	#26C4D9
+genotype	297	#26BED9
+genotype	55	#26B9D9
+genotype	56	#26B4D9
+genotype	57	#26AFD9
+genotype	58	#26AAD9
+genotype	59	#26A5D9
+genotype	61	#26A0D9
+genotype	62	#269BD9
+genotype	63	#2696D9
+genotype	64	#2691D9
+genotype	66	#268CD9
+genotype	69	#2687D9
+genotype	70	#2682D9
+genotype	71	#267DD9
+genotype	76	#2678D9
+genotype	78	#2673D9
+genotype	101	#266ED9
+genotype	102	#2669D9
+genotype	104	#2664D9
+genotype	105	#265ED9
+genotype	106	#2659D9
+genotype	107	#2654D9
+genotype	110	#264FD9
+genotype	112	#264AD9
+genotype	113	#2645D9
+genotype	115	#2640D9
+genotype	117	#263BD9
+genotype	119	#2636D9
+genotype	120	#2631D9
+genotype	121	#262CD9
+genotype	124	#2627D9
+genotype	125	#2B26D9
+genotype	126	#3026D9
+genotype	128	#3526D9
+genotype	129	#3A26D9
+genotype	130	#3F26D9
+genotype	131	#4426D9
+genotype	132	#4926D9
+genotype	134	#4E26D9
+genotype	135	#5326D9
+genotype	136	#5826D9
+genotype	137	#5D26D9
+genotype	138	#6226D9
+genotype	140	#6726D9
+genotype	141	#6C26D9
+genotype	142	#7126D9
+genotype	143	#7626D9
+genotype	148	#7B26D9
+genotype	152	#8126D9
+genotype	153	#8626D9
+genotype	154	#8B26D9
+genotype	155	#9026D9
+genotype	156	#9526D9
+genotype	158	#9A26D9
+genotype	159	#9F26D9
+genotype	161	#A426D9
+genotype	163	#A926D9
+genotype	164	#AE26D9
+genotype	165	#B326D9
+genotype	168	#B826D9
+genotype	170	#BD26D9
+genotype	173	#C226D9
+genotype	174	#C726D9
+genotype	176	#CC26D9
+genotype	185	#D126D9
+genotype	189	#D626D9
+genotype	190	#D926D6
+genotype	191	#D926D1
+genotype	196	#D926CC
+genotype	203	#D926C7
+genotype	207	#D926C2
+genotype	208	#D926BD
+genotype	209	#D926B8
+genotype	210	#D926B3
+genotype	211	#D926AE
+genotype	212	#D926A9
+genotype	214	#D926A4
+genotype	215	#D9269E
+genotype	219	#D92699
+genotype	224	#D92694
+genotype	232	#D9268F
+genotype	233	#D9268A
+genotype	234	#D92685
+genotype	236	#D92680
+genotype	237	#D9267B
+genotype	238	#D92676
+genotype	239	#D92671
+genotype	240	#D9266C
+genotype	241	#D92667
+genotype	248	#D92662
+genotype	251	#D9265D
+genotype	252	#D92658
+genotype	253	#D92653
+genotype	259	#D9264E
+genotype	260	#D92649
+genotype	261	#D92644
+genotype	266	#D9263E
+genotype	267	#D92639
+genotype	270	#D92634
+genotype	271	#D9262F
+genotype	275	#D9262A
+genotype	276	#D92726
+genotype	299	#D92C26
+genotype	302	#D93126
+genotype	303	#D93626
+genotype	304	#D93B26
+genotype	72	#D94126
+genotype	77	#D94626
+genotype	79	#D94B26
+genotype	80	#D95026
+genotype	81	#D95526
+genotype	82	#D95A26
+genotype	85	#D95F26
+genotype	86	#D96426
+genotype	87	#D96926
+genotype	89	#D96E26
+genotype	90	#D97326
+genotype	91	#D97826
+genotype	92	#D97D26
+genotype	93	#D98226
+genotype	94	#D98726
+genotype	96	#D98C26
+GIS_Position	GIS-proxy	#BDBDBD
+GIS_Position	GIS-exact	#3F8F5B

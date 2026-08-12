@@ -3,31 +3,36 @@
   "maintainers": [
     {"name": "Sachi Ramachandran, Dr. Chunlei Su", "url": ""}
   ],
-  "build_url": "https://github.com/nextstrain/zika-tutorial",
-"colorings": [
-    { "key": "genotype", "title": "Genotype", "type": "categorical" },
+  "build_url": "https://github.com/sachiramachandran/toxoplasma-gondii-analysis",
+  "colorings": [
+    { "key": "genotype", "title": "ToxoDB Genotype", "type": "categorical" },
     { "key": "host", "title": "Host", "type": "categorical" },
     { "key": "region", "title": "Region", "type": "categorical" },
     { "key": "country", "title": "Country", "type": "categorical" },
     { "key": "city", "title": "City", "type": "categorical" },
     { "key": "date", "title": "Date", "type": "continuous" },
     { "key": "MAT_titer", "title": "MAT Titer", "type": "continuous" },
-    { "key": "mortality_percent", "title": "Mortality Rate", "type": "continuous" },
+    { "key": "mortality_percent", "title": "Mouse Mortality (%)", "type": "continuous" },
+    { "key": "GIS_Position", "title": "Coordinate Precision", "type": "categorical" },
     { "key": "Reference", "title": "Source/Reference", "type": "categorical" }
   ],
   "geo_resolutions": [
-    "country"
+    "country",
+    "region",
+    "city"
   ],
   "panels": [
-     "tree",
-     "map",
-     "entropy"
+    "tree",
+    "map",
+    "entropy"
   ],
   "display_defaults": {
     "map_triplicate": true
   },
   "filters": [
-    "country",
-    "author"
+    "genotype",
+    "host",
+    "region",
+    "country"
   ]
 }
