@@ -233,8 +233,7 @@ These bound every claim above and are worth stating plainly.
 
 ## Credits
 
-Built by Sachi Ramachandran with Dr. Chunlei Su, University of Tennessee, Knoxville
-(MICR 493). Isolate data is drawn from 53 published studies, cited per-isolate in the
+Built by Sachi Ramachandran with Dr. Chunlei Su, University of Tennessee, Knoxville. Isolate data is drawn from 53 published studies, cited per-isolate in the
 `Reference` field and visible in the Auspice tree.
 
 Adapted from the [Nextstrain Zika tutorial](https://github.com/nextstrain/zika-tutorial).
