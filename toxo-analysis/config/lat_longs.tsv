@@ -1,10 +1,10 @@
 country	Argentina	-34.925528	-57.950715
 country	Austria	46.991531	15.303803
-country	Brazil	-17.898370	-45.978097
+country	Brazil	-17.754857	-45.878823
 country	Burkina Faso	12.238300	-1.561600
-country	Canada	51.336421	-57.401118
+country	Canada	51.336421	-98.440840
 country	Chile	-38.734234	-72.930068
-country	China	34.033711	117.035566
+country	China	34.034878	113.771768
 country	Colombia	4.606457	-74.256368
 country	Congo	-4.359644	15.340247
 country	Costa Rica	10.054087	-84.404874
@@ -20,30 +20,29 @@ country	Italy	40.957019	16.952765
 country	Kenya	0.583331	34.466667
 country	Mali	17.576856	-3.991655
 country	Mexico	20.428706	-99.351239
-country	Nicaragua	12.744068	-82.416054
+country	Nicaragua	12.743909	-86.306633
 country	Peru	-12.289365	-76.978380
 country	Plateau	9.166667	9.750000
 country	Poland	54.340597	18.188938
-country	Portugal	40.898741	-8.702909
+country	Portugal	40.898741	-9.796659
 country	Puerto Rico	18.088880	-67.893660
 country	Sri Lanka	7.005054	81.005418
 country	St. Kitts	17.363916	-62.778416
 country	Svalbard	77.880486	20.979710
 country	Turkey	38.470852	27.141581
-country	USA	40.214448	-88.998438
-country	Venezuela	90.425563	-70.311809
+country	USA	40.247967	-89.139047
+country	Venezuela	9.425563	-70.311809
 country	Vietnam	11.423500	106.744225
 region	Africa	24.495830	30.703784
 region	Arctic	77.880486	20.979710
-region	Asia	26.921449	85.463418
+region	Asia	26.921964	84.022643
 region	Caribbean	14.304412	-63.296301
-region	Central America	11.691574	-83.554626
-region	Europe	45.845053	11.060732
+region	Central America	11.691487	-85.668027
+region	Europe	45.845053	10.861869
 region	Hawaii	21.301181	-157.788917
-region	North America	40.364859	-86.937580
-region	South America	-14.877368	-49.910080
-city	Abou Rawash	30.022037	31.221937
-city	Abou-rawash	30.021338	31.220860
+region	North America	40.398038	-87.575223
+region	South America	-15.689007	-49.828545
+city	Abou Rawash	30.021930	31.221773
 city	Addis Ababa	9.028356	38.751729
 city	Agua Branca	-7.507684	-37.632796
 city	Alagoas	-22.415746	-44.289425
@@ -59,7 +58,7 @@ city	Armenia	4.537741	-75.700147
 city	Azores Island	38.500000	-28.000000
 city	Bad Gleichenberg	48.038442	14.653902
 city	Bahia	-11.096500	-40.452325
-city	Balc¸ova	38.389100	27.050000
+city	Balcova	38.389100	27.050000
 city	Baltimore/ Maryland	39.295012	-76.607918
 city	Barcelos	41.538798	-8.612293
 city	Bay (MI)	43.711000	-84.016700
@@ -72,16 +71,14 @@ city	Bladen (NC)	34.590227	-78.562085
 city	Bogota	4.615047	-74.075896
 city	Bossier	32.755100	-93.662300
 city	Bourbon (KS)	37.795700	-94.810600
-city	British Columbia	49.249444	123.119167
+city	British Columbia	49.249444	-123.119167
 city	Bueno Aires City	-34.925528	-57.950715
 city	Bush Lot	6.200000	-57.266667
 city	Campina Grande	-7.230833	-35.881667
-city	Cangucu	-31.395000	-52.675833
-city	Canguc¸u	-31.390260	-52.680199
-city	Capao do Leao	-31.762778	-52.483889
-city	Capa˜o do Lea˜o	-31.759273	-52.446794
+city	Cangucu	-31.391050	-52.679472
+city	Capao do Leao	-31.761025	-52.465341
 city	Castanhal	-1.290662	-47.918007
-city	Ceara	-14.958544	-46.233799
+city	Ceara	-5.200000	-39.530000
 city	Central Mineira	-18.761944	-41.305833
 city	Changning Hunan	26.422222	112.400000
 city	Chesapeake City (VA)	36.769592	-76.287367
@@ -144,7 +141,7 @@ city	Grays Harbor/ Roosevelt beach	47.179517	-124.188388
 city	Greene	33.519017	-83.162969
 city	Groß St. Florian	46.822100	15.321701
 city	Guaira	-24.074881	-54.252541
-city	Guangzhou	23.122754	131.033950
+city	Guangzhou	23.129110	113.264385
 city	Guarapari	-20.646114	-40.500484
 city	Guatemala	14.813178	-90.617541
 city	Gwinnett	33.919100	-84.016700
@@ -158,7 +155,7 @@ city	Iberville	30.850302	-91.018929
 city	Ilheus- Itabuna	-14.791365	-39.031177
 city	Illinois	41.853408	-87.644768
 city	Inhangapi	-1.348333	-47.910556
-city	Iowa	42.114931	-71.033012
+city	Iowa	41.878003	-93.097702
 city	Ithaca	6.234024	-57.545525
 city	J + K	46.870700	15.905773
 city	Jaborandi	-20.900000	-47.266667
@@ -196,17 +193,17 @@ city	Mahaica	6.691512	-57.912330
 city	Malta	-6.899213	-37.517680
 city	Manitoba	50.170330	-99.776644
 city	Manquehue	-38.760787	-72.922620
-city	Maranha˜o	-3.735316	-43.354665
+city	Maranhao	-3.735316	-43.354665
 city	Marechal Floriano	-20.406889	-40.671707
 city	Marilia	-22.220833	-49.948611
 city	Marituba	-1.355278	-48.343333
 city	Marquette (MI)	46.644600	-87.559400
 city	Maryland	39.235353	-76.686538
 city	Masina	-4.378913	15.392392
-city	Massachusetts	41.954495	-73.227576
+city	Massachusetts	42.407211	-71.382437
 city	Metropolitana de Belo Horizonte	-19.809356	-43.949954
 city	Midland (MI)	43.615600	-84.247200
-city	Minnesota	47.276604	-94.054235
+city	Minnesota	46.729553	-94.685900
 city	Moc Hoa LA	10.766667	105.933333
 city	Mohave (AZ)	35.214300	-113.763300
 city	Mon Repos	6.807337	-58.044338
@@ -215,7 +212,7 @@ city	Monte Negro	-9.736613	-62.693922
 city	Monteiro	-7.886225	-37.112692
 city	Montgomery (AL)	32.379200	-86.307700
 city	Mosteiro (Vila do Conde)	41.338498	-8.694848
-city	Netos (Figueira da Foz)	40.233333	8.750000
+city	Netos (Figueira da Foz)	40.233333	-8.750000
 city	Nevada (CA)	39.261600	-121.016100
 city	New Jersey	40.058300	-74.405700
 city	Ngaliema	-4.369733	15.256448
@@ -226,8 +223,7 @@ city	Northeast Parana state	-23.287590	-51.167775
 city	Northwestern Maryland	39.273972	-77.174270
 city	Nueva Imperial	-38.639426	-73.315810
 city	Oeste de Minas	-20.117100	-44.902581
-city	Olho d' Agua	-7.204527	-37.745588
-city	Olho d' agua	-7.200429	-37.746506
+city	Olho d' Agua	-7.201112	-37.746353
 city	Onverwagt	6.421798	-57.611363
 city	Orleans (LA)	30.068911	-89.925996
 city	Osasco	-23.525311	-46.781410
@@ -257,24 +253,23 @@ city	Reynolds (MO)	37.400900	-91.073500
 city	Ribeirao Preto	-21.172688	-47.815593
 city	Riegersburg	47.005502	15.938282
 city	Rio Grande	-32.028597	-52.096367
-city	Rio Grande do Norte	-9.131678	-38.958343
+city	Rio Grande do Norte	-5.794500	-36.580000
 city	Rio de Janeiro	-22.905924	-43.204418
-city	Sabana Grande de Monay	90.425563	-70.311809
+city	Sabana Grande de Monay	9.425563	-70.311809
 city	Salvador	-12.967368	-38.507712
 city	San Jose	9.437110	-84.000944
 city	San Juan de Miraflores	-12.289365	-76.978380
 city	San Nicolas	12.939503	-86.342578
-city	Santa Cruz	11.491615	0.004632
+city	Santa Cruz	11.488100	-85.588100
 city	Santa Isabel	-1.290466	-48.157712
 city	Santa Isabel do Ivai	-22.995244	-53.190995
 city	Santa Teresa	11.725900	-86.209277
+city	Santarem	-2.434253	-54.693190
 city	Santarem - Para	-2.436377	-54.693633
-city	Santare´m	-2.434253	-54.693190
 city	Sao Jose do Bonfim	-7.165278	-37.307222
 city	Sao Jose do Rio Preto	-20.816296	-49.371273
 city	Sao Paulo	-23.543288	-46.549762
-city	Sao Paulo City	-23.544125	-46.632234
-city	Sao Paulo city	-23.544807	-46.634475
+city	Sao Paulo city	-23.544688	-46.634085
 city	Scott	38.317200	-84.564100
 city	Sergipe	-10.687200	-37.432900
 city	Serra	-20.129444	-40.308056

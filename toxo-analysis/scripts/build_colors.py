@@ -7,9 +7,19 @@ auto-assigned colors for every panel. Generating the file guarantees the key
 casing is right and that no value is ever missing an entry.
 
 Small vocabularies get hand-picked palettes so the map and legend stay readable.
-Large ones (genotype: 212 values, city: 282) get a deterministic ramp ordered by
-isolate count, which at least makes the common categories far apart in hue and
-keeps the output stable across runs.
+Mid-sized ones get an evenly-spaced hue ramp ordered by isolate count.
+
+The two large vocabularies (city: 277 values, genotype: 212) cannot use an even
+ramp at all: spreading 277 values over one hue rotation puts neighbours ~1.3
+degrees apart, which is a CIELAB deltaE around 0.7 -- well under the ~2.3 needed
+to tell two colours apart. Every city came out the same pale teal. They use
+distinct_ramp() instead, which walks the hue circle by the golden angle and
+cycles lightness and saturation, lifting the gap between neighbours to a deltaE
+around 100. With this many categories no scheme can make all of them mutually
+distinguishable; the goal is that adjacent legend rows and neighbouring map
+demes never look alike.
+
+All ramps are ordered by isolate count and are stable across runs.
 
 Output format is augur's:  <column>\t<value>\t#RRGGBB
 
@@ -62,6 +72,28 @@ def ramp(values, saturation, lightness, hue_offset=0.0):
     return out
 
 
+# Walking the hue circle by the golden angle keeps successive values far apart
+# no matter how many there are, instead of inching around it. Cycling lightness
+# and saturation on top separates values whose hues do happen to land close.
+GOLDEN_ANGLE = 0.6180339887498949
+LIGHTNESS_TIERS = (0.42, 0.58, 0.72)
+SATURATION_TIERS = (0.75, 0.50)
+
+
+def distinct_ramp(values, hue_offset=0.0):
+    """Assign maximally-separated colours to values, in the order given."""
+    out = {}
+    for i, value in enumerate(values):
+        hue = (hue_offset + i * GOLDEN_ANGLE) % 1.0
+        lightness = LIGHTNESS_TIERS[i % len(LIGHTNESS_TIERS)]
+        saturation = SATURATION_TIERS[(i // len(LIGHTNESS_TIERS)) % len(SATURATION_TIERS)]
+        r, g, b = colorsys.hls_to_rgb(hue, lightness, saturation)
+        out[value] = "#{:02X}{:02X}{:02X}".format(
+            round(r * 255), round(g * 255), round(b * 255)
+        )
+    return out
+
+
 def by_frequency(rows, column):
     """Distinct non-blank values, most common first, ties broken alphabetically."""
     counts = Counter((row.get(column) or "").strip() for row in rows)
@@ -83,12 +115,14 @@ def main():
         palettes[column] = {**ramp(missing, 0.55, 0.55), **curated}
         palettes[column] = {v: palettes[column][v] for v in values}
 
-    # Generated ramps, tuned so the three large vocabularies stay
-    # distinguishable from one another at a glance.
+    # Even ramps for the vocabularies small enough to take one.
     palettes["country"] = ramp(by_frequency(rows, "country"), 0.62, 0.48)
     palettes["host"] = ramp(by_frequency(rows, "host"), 0.45, 0.55, hue_offset=0.33)
-    palettes["genotype"] = ramp(by_frequency(rows, "genotype"), 0.70, 0.50, hue_offset=0.10)
-    palettes["city"] = ramp(by_frequency(rows, "city"), 0.35, 0.62, hue_offset=0.5)
+
+    # The two crowded ones. The hue offsets are kept from the even ramps so the
+    # genotype and city palettes still look unlike each other.
+    palettes["genotype"] = distinct_ramp(by_frequency(rows, "genotype"), hue_offset=0.10)
+    palettes["city"] = distinct_ramp(by_frequency(rows, "city"), hue_offset=0.5)
 
     lines = []
     for column in COLUMNS:

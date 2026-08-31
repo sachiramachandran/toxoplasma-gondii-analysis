@@ -1,9 +1,9 @@
-# Toxoplasma gondii GRA6 Phylogeny
+# Toxoplasma gondii RFLP Phylogeny
 
 A time-resolved phylogeny of **1,662 *Toxoplasma gondii* isolates** from 35 countries and
 38 host species, built with [Nextstrain](https://nextstrain.org). *T. gondii* is a
 protozoan parasite, so this pipeline is an adaptation of Nextstrain's viral tooling to a
-single-locus eukaryotic marker — the GRA6 dense granule antigen gene.
+single-locus eukaryotic marker, sequenced per ToxoDB RFLP genotype.
 
 Sachi Ramachandran and Dr. Chunlei Su · University of Tennessee, Knoxville · MICR 493
 
@@ -12,7 +12,7 @@ Sachi Ramachandran and Dr. Chunlei Su · University of Tennessee, Knoxville · M
 **[View the interactive tree →](https://nextstrain.org/community/sachiramachandran/toxoplasma-gondii-analysis)**
 
 <!-- Add your screenshot here: save the image to docs/auspice-overview.png -->
-![Auspice view of the T. gondii GRA6 phylogeny](docs/auspice-overview.png)
+![Auspice view of the T. gondii RFLP phylogeny](docs/auspice-overview.png)
 
 ## What this build adds
 
@@ -22,8 +22,8 @@ machinery to *T. gondii* required rebuilding most of those assumptions, and the 
 carries several things a stock build does not.
 
 **A single-locus marker that carries full isolate metadata.** The dataset holds 212 unique
-GRA6 sequences — one per ToxoDB RFLP genotype — expanded across all 1,662 isolates via the
-genotype key. That expansion is what lets one 297 bp gene tree carry host species,
+marker sequences — one per ToxoDB RFLP genotype — expanded across all 1,662 isolates via
+the genotype key. That expansion is what lets one 297 bp gene tree carry host species,
 geography, serology, and mouse virulence simultaneously, rather than being a bare
 sequence-similarity dendrogram.
 
@@ -63,7 +63,7 @@ stock Nextstrain build has. It separates genotypes sharply:
 isolates, so serologic response can be read against genotype and host on the same tree.
 
 **A clock retuned for a protozoan locus.** The reference is GenBank
-[AF239291](https://www.ncbi.nlm.nih.gov/nuccore/AF239291) (740 bp, GRA6 CDS at 23–715).
+[AF239291](https://www.ncbi.nlm.nih.gov/nuccore/AF239291) (740 bp, CDS at 23–715).
 `augur refine` runs at a clock rate of 8×10⁻⁴ ± 2×10⁻⁴ with `--keep-root` and
 `--clock-filter-iqd 4`, replacing the tutorial's whole-genome RNA-virus defaults.
 
@@ -72,9 +72,9 @@ isolates, so serologic response can be read against genotype and host on the sam
 | | |
 |---|---|
 | Isolates | 1,662 |
-| Locus | GRA6, 297 bp aligned to a 740 bp reference |
+| Locus | ToxoDB RFLP marker, 297 bp aligned to a 740 bp reference |
 | ToxoDB RFLP genotypes | 212 |
-| Countries | 35 (9 regions, 282 localities) |
+| Countries | 35 (9 regions, 277 localities) |
 | Host species | 38 — Chicken 598, Cat 329, Pig 220, Dog 94, Feral Pig 75, Sheep 61, … |
 | Collection years | 1989–2018 |
 | Source publications | 53 |
@@ -90,19 +90,19 @@ command:
 |---|---|---|
 | `index_sequences` | Index sequence composition for filtering | `results/sequence_index.tsv` |
 | `filter` | Apply exclusions and sampling thresholds | `results/filtered.fasta` |
-| `align` | Align to the GRA6 reference, filling gaps with N | `results/aligned.fasta` |
+| `align` | Align to the RFLP reference, filling gaps with N | `results/aligned.fasta` |
 | `tree` | Infer the maximum-likelihood tree | `results/tree_raw.nwk` |
 | `refine` | Fit the molecular clock, infer node dates | `results/tree.nwk` |
 | `ancestral` | Reconstruct ancestral nucleotide states | `results/nt_muts.json` |
-| `translate` | Derive amino acid changes across GRA6 | `results/aa_muts.json` |
+| `translate` | Derive amino acid changes across the marker | `results/aa_muts.json` |
 | `traits` | Infer ancestral country assignments | `results/traits.json` |
 | `export` | Assemble everything for Auspice | `auspice/toxoplasma-gondii-analysis.json` |
 
 `data/toxoplasma_sequences.fasta` is a committed input, not a build product. It was produced
-once by expanding the 212 genotype sequences in `data/toxo_expansion.txt` across the 1,662
-isolate IDs in `data/toxo_rflp_1662_metadata.tsv`, keyed on ToxoDB genotype. Every FASTA
-header matches a `strain` value in `data/toxo_meta3.tsv` exactly — that linkage is what the
-whole build rests on.
+once by expanding the 212 genotype sequences in `old_data_backup/toxo_expansion.txt` across
+the 1,662 isolate IDs in `old_data_backup/toxo_rflp_1662_metadata.tsv`, keyed on ToxoDB
+genotype. Every FASTA header matches a `strain` value in `data/toxo_meta3.tsv` exactly —
+that linkage is what the whole build rests on.
 
 ## Running it
 
@@ -145,21 +145,23 @@ auspice/                      published JSON — tracked, served by nextstrain.o
 docs/                         README images
 toxo-analysis/
   config/
-    ToxoplasmaOutgroup.gb     GRA6 reference (GenBank AF239291)
+    ToxoplasmaOutgroup.gb     RFLP marker reference (GenBank AF239291)
     auspice_config.json       titles, colorings, geo resolutions, panels
     colors.tsv                generated — all 6 categorical colorings
     lat_longs.tsv             generated — country, region, city
+    place_anchors.tsv         authoritative coordinates for 10 localities whose
+                              recorded coordinates contradict their label
     dropped_strains.txt       exclusion list (currently empty)
-  data/
-    toxoplasma_sequences.fasta   LIVE  1,662 GRA6 sequences
-    toxo_meta3.tsv               LIVE  1,662 isolates, the build's metadata
-    toxo_expansion.txt           LIVE  212 genotype -> GRA6 sequence pairs
-    toxo_rflp_1662_metadata.tsv  LIVE  isolate ID -> genotype mapping
-    book2_sequence_OLD.fasta     superseded
-    toxo_meta2.csv               superseded
-    toxoplasma.fasta             superseded
-    samples_1, samples_2         superseded
-  old_data_backup/               superseded
+  data/                       exactly the Snakefile's two inputs
+    toxoplasma_sequences.fasta   1,662 marker sequences
+    toxo_meta3.tsv               1,662 isolates, the build's metadata
+  old_data_backup/            superseded inputs and provenance records, read by
+                              nothing in the build:
+    Toxo RFLP 1662 samples with coordinates.tsv   original upstream export
+    toxo_expansion.txt           351 genotype -> marker sequence rows
+    toxo_rflp_1662_metadata.tsv  isolate ID -> genotype mapping
+    toxo_meta2.csv, toxoplasma_metadata.tsv, toxoplasma_metadata_OLD.tsv
+    book2_sequence_OLD.fasta, toxoplasma.fasta, samples_1, samples_2
   envs/nextstrain.yaml           conda environment, for running augur directly
   scripts/
     build_lat_longs.py        derives lat_longs.tsv from the metadata coordinates
@@ -167,8 +169,9 @@ toxo-analysis/
   results/, logs/             generated, gitignored
 ```
 
-`Toxo RFLP 1662 samples with coordinates.tsv` at the repository root is the original
-upstream export, kept unmodified as a provenance record.
+`old_data_backup/Toxo RFLP 1662 samples with coordinates.tsv` is the original upstream
+export, kept unmodified as a provenance record. Nothing in `old_data_backup/` is read by the
+Snakefile or by either script.
 
 ## Adapting this to another dataset
 
@@ -207,10 +210,10 @@ Then update the path constants at the top of the `Snakefile` and the `colorings`
 
 These bound every claim above and are worth stating plainly.
 
-- **Single locus.** This is a GRA6 gene tree, not a strain phylogeny. GRA6 alone cannot
-  resolve recombinant lineages, and *T. gondii* recombines.
+- **Single locus.** This is a single-marker gene tree, not a strain phylogeny. One RFLP
+  marker cannot resolve recombinant lineages, and *T. gondii* recombines.
 - **Identical sequences by construction.** Isolates sharing a ToxoDB genotype have the same
-  GRA6 sequence, because sequences were expanded from a per-genotype representative. Tip
+  marker sequence, because sequences were expanded from a per-genotype representative. Tip
   clustering therefore reflects sampling effort as much as evolutionary relationship, and
   clade sizes should not be read as population sizes.
 - **The time axis is weakly informed.** A molecular clock fit to 297 bp over a 29-year
@@ -226,6 +229,32 @@ These bound every claim above and are worth stating plainly.
   Norwegian territory, and `Congo` and `St. Kitts` are ambiguous short forms. These are
   kept as recorded rather than reinterpreted, and are mapped by explicit coordinates
   derived from the isolates themselves.
+- **Ten localities are positioned from an anchor, not from their isolates.** Augur never
+  reads the metadata's `Latitude`/`Longitude`; it places every deme from
+  `config/lat_longs.tsv`, keyed on the `country`/`region`/`city` label. Where the recorded
+  coordinates contradict that label, the label wins and the position comes from
+  `config/place_anchors.tsv`, leaving the metadata untouched. Most are plain typos — seven
+  Venezuelan isolates record latitude `90.42` for `9.42`, eight Guangzhou isolates record
+  longitude `133.25` for `113.25`, and four isolates drop a minus sign, which had put one
+  Canadian isolate in northeastern China and one Portuguese isolate in Sardinia.
+  `Massachusetts` is a judgement call worth knowing about: 29 of its 82 isolates carry
+  Pennsylvania coordinates, and the deme is placed in Massachusetts because the label is
+  treated as authoritative. `build_lat_longs.py` aborts on any out-of-range centroid, on any
+  unanchored city whose isolates scatter more than 2°, and on any unanchored city that would
+  land more than 10° closer to its own country with a sign flipped or the pair swapped —
+  that last check is what catches a single-isolate city, where there is no spread to measure.
+- **Fernando de Noronha really is in the ocean.** It is a Brazilian volcanic archipelago
+  about 350 km off the northeast coast, and its 25 isolates plot there correctly. It is the
+  one deme on open water that is not a mistake.
+- **Eight locality labels were rewritten, and the count fell from 282 to 277.** Five were
+  duplicates of a label that already existed — `Abou-rawash` into `Abou Rawash`,
+  `Sao Paulo City` into `Sao Paulo city`, and three whose accents had been mangled into a
+  stray cedilla or tilde (`Canguc¸u`, `Capa˜o do Lea˜o`, `Olho d' agua`). Augur's lat-longs
+  lookup is case-insensitive, so each pair had been colliding and one silently inherited the
+  other's coordinates; the dataset's largest locality was split in two. The remaining three
+  (`Balc¸ova`, `Santare´m`, `Maranha˜o`) had the same mangled accents but no duplicate
+  partner, and were repaired so the legend reads cleanly. Only the `city` column was
+  touched; `Groß St. Florian` is correct German and was left alone.
 - **68 isolates have no locality** and do not render at city zoom.
 - **Censored serologic titers were numified.** 41 MAT values recorded as inequalities
   (`>3200`, `<25`, …) were converted to their detection limit so they could be colored.
