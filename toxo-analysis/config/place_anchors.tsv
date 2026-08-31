@@ -1,0 +1,26 @@
+# Authoritative coordinates for localities whose recorded isolate coordinates
+# contradict the place their label names.
+#
+# build_lat_longs.py normally positions a locality at the mean of its isolates'
+# recorded coordinates, which is correct for the great majority of this dataset.
+# The entries below are the exceptions: localities where the metadata's own
+# Latitude/Longitude are wrong (transposed digits, a dropped minus sign) or
+# where a batch of isolates carries a different place's centroid. The country
+# and city labels are treated as authoritative, so the named place wins and the
+# metadata coordinates are left untouched.
+#
+# Anchoring a city is enough to fix its country and region too: an anchored
+# isolate contributes the anchor position to those rollups as well.
+#
+# Format: <column>\t<value>\t<latitude>\t<longitude>\t<note>
+column	value	latitude	longitude	note
+city	Sabana Grande de Monay	9.425563	-70.311809	Trujillo, Venezuela. 7 isolates record latitude 90.42 for 9.42; 90+ is not a valid latitude.
+city	Guangzhou	23.129110	113.264385	Guangdong, China. 8 isolates record longitude 133.25 for 113.25; agrees with the one GIS-exact isolate at 23.117/113.250.
+city	Iowa	41.878003	-93.097702	State of Iowa centroid. One isolate (TgCyW6) drops the minus from its longitude, placing it in China.
+city	Santa Cruz	11.488100	-85.588100	Nicaragua. One isolate of two (TgCkNi45) drops the minus from its longitude, placing it in the Gulf of Guinea.
+city	Ceara	-5.200000	-39.530000	State of Ceara, Brazil. 3 of 6 isolates carry Parana coordinates ~1200 km away.
+city	Rio Grande do Norte	-5.794500	-36.580000	State of Rio Grande do Norte, Brazil. 1 of 4 isolates carries Minas Gerais coordinates.
+city	Massachusetts	42.407211	-71.382437	Commonwealth of Massachusetts centroid. 29 of 82 isolates carry Pennsylvania coordinates; the label is treated as authoritative.
+city	Minnesota	46.729553	-94.685900	State of Minnesota centroid. Sampling legitimately spans 2.3 degrees, so the mean is fine but the anchor keeps it off the validator's spread check.
+city	British Columbia	49.249444	-123.119167	Vancouver, British Columbia. TgCgCa2(nd) drops the minus from its longitude, placing it in northeastern China. Sign-corrected; the row is GIS-exact, so its precision is kept.
+city	Netos (Figueira da Foz)	40.233333	-8.750000	Figueira da Foz, Portugal. TgCkPr1 drops the minus from its longitude, placing it in Sardinia. Sign-corrected; the row is GIS-exact, so its precision is kept.
