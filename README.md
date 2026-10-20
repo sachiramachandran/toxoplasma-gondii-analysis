@@ -1,9 +1,9 @@
 # Toxoplasma gondii RFLP Phylogeny
 
 A time-resolved phylogeny of **1,662 *Toxoplasma gondii* isolates** from 35 countries and
-38 host species, built with [Nextstrain](https://nextstrain.org). *T. gondii* is a
-protozoan parasite, so this pipeline is an adaptation of Nextstrain's viral tooling to a
-single-locus eukaryotic marker, sequenced per ToxoDB RFLP genotype.
+35 host species, built with [Nextstrain](https://nextstrain.org). *T. gondii* is a
+protozoan parasite, so this pipeline is an adaptation of Nextstrain's viral tooling to
+multilocus PCR-RFLP genotypes, each encoded as a 297 bp concatenated sequence.
 
 Sachi Ramachandran and Dr. Chunlei Su · University of Tennessee, Knoxville · MICR 493
 
@@ -11,8 +11,7 @@ Sachi Ramachandran and Dr. Chunlei Su · University of Tennessee, Knoxville · M
 
 **[View the interactive tree →](https://nextstrain.org/community/sachiramachandran/toxoplasma-gondii-analysis)**
 
-<!-- Add your screenshot here: save the image to docs/auspice-overview.png -->
-![Auspice view of the T. gondii RFLP phylogeny](docs/auspice-overview.png)
+![Auspice view of the T. gondii RFLP phylogeny](docs/auspice_overview.png)
 
 ## What this build adds
 
@@ -21,11 +20,13 @@ a strong molecular clock, and metadata that stops at date and location. Applying
 machinery to *T. gondii* required rebuilding most of those assumptions, and the result
 carries several things a stock build does not.
 
-**A single-locus marker that carries full isolate metadata.** The dataset holds 212 unique
-marker sequences — one per ToxoDB RFLP genotype — expanded across all 1,662 isolates via
-the genotype key. That expansion is what lets one 297 bp gene tree carry host species,
-geography, serology, and mouse virulence simultaneously, rather than being a bare
-sequence-similarity dendrogram.
+**Sequence-coded PCR-RFLP genotypes that carry full isolate metadata.** Each ToxoDB
+genotype is encoded as a 297 bp sequence: fixed sequence codes for its alleles at 11
+PCR-RFLP markers, concatenated in a fixed order (see *Marker coding* below). The dataset
+holds one such sequence per genotype (212 genotypes), expanded across all 1,662 isolates via
+the genotype key. That expansion is what lets one tree carry host species, geography,
+serology, and mouse virulence simultaneously, rather than being a bare similarity
+dendrogram.
 
 **A quantified New World / Old World diversity gradient.** *T. gondii* is famously clonal
 in the northern hemisphere and wildly diverse in South America. This build puts numbers on
@@ -62,20 +63,45 @@ stock Nextstrain build has. It separates genotypes sharply:
 **Serology alongside sequence.** MAT titer is a second continuous coloring, covering 1,099
 isolates, so serologic response can be read against genotype and host on the same tree.
 
-**A clock retuned for a protozoan locus.** The reference is GenBank
-[AF239291](https://www.ncbi.nlm.nih.gov/nuccore/AF239291) (740 bp, CDS at 23–715).
-`augur refine` runs at a clock rate of 8×10⁻⁴ ± 2×10⁻⁴ with `--keep-root` and
-`--clock-filter-iqd 4`, replacing the tutorial's whole-genome RNA-virus defaults.
+**A reference with no coding region.** The reference is the ToxoDB genotype #1 sequence
+(`config/reference_genotype1.gb`, 297 bp). Because the concatenated allele codes have no
+reading frame, the build has no `translate` step and reports nucleotide changes only; the
+diversity panel uses positions 1–297. `augur refine` runs at a clock rate of
+8×10⁻⁴ ± 2×10⁻⁴ with `--keep-root` and `--clock-filter-iqd 4`, replacing the tutorial's
+whole-genome RNA-virus defaults.
+
+### Marker coding
+
+Each 297 bp sequence joins the allele codes for these markers, in this order:
+
+| Marker | Positions | Informative sites |
+|---|---|---:|
+| SAG1 | 1–22 | 2 |
+| 5′-3′ SAG2 | 23–44 | 2 |
+| alt. SAG2 | 45–77 | 3 |
+| SAG3 | 78–99 | 3 |
+| BTUB | 100–121 | 2 |
+| GRA6 | 122–143 | 2 |
+| c22-8 | 144–176 | 3 |
+| c29-2 | 177–209 | 3 |
+| L358 | 210–231 | 2 |
+| PK1 | 232–275 | 5 |
+| Apico | 276–297 | 2 |
+
+The codes come from the *RFLP genotypes to sequence (SeqCoded)* workbook maintained by
+Dr. Chunlei Su. Codes for unique alleles (`u-1`, `u-2`, `u-3`) are pseudo-sequences that
+only mark a different allele, and untyped markers (`nd`) are dashes, which `augur align`
+turns into `N`.
 
 ## Dataset at a glance
 
 | | |
 |---|---|
 | Isolates | 1,662 |
-| Locus | ToxoDB RFLP marker, 297 bp aligned to a 740 bp reference |
+| Sequence | 11 PCR-RFLP markers, concatenated allele codes, 297 bp (29 informative sites) |
 | ToxoDB RFLP genotypes | 212 |
 | Countries | 35 (9 regions, 277 localities) |
-| Host species | 38 — Chicken 598, Cat 329, Pig 220, Dog 94, Feral Pig 75, Sheep 61, … |
+| Host species | 35 — Chicken 611, Cat 329, Pig 220, Dog 94, Feral Pig 75, Sheep 61, … |
 | Collection years | 1989–2018 |
 | Source publications | 53 |
 | MAT titer recorded | 1,099 isolates |
@@ -90,11 +116,10 @@ command:
 |---|---|---|
 | `index_sequences` | Index sequence composition for filtering | `results/sequence_index.tsv` |
 | `filter` | Apply exclusions and sampling thresholds | `results/filtered.fasta` |
-| `align` | Align to the RFLP reference, filling gaps with N | `results/aligned.fasta` |
+| `align` | Align to the genotype #1 reference, filling gaps with N, then drop the reference | `results/aligned.fasta` |
 | `tree` | Infer the maximum-likelihood tree | `results/tree_raw.nwk` |
 | `refine` | Fit the molecular clock, infer node dates | `results/tree.nwk` |
 | `ancestral` | Reconstruct ancestral nucleotide states | `results/nt_muts.json` |
-| `translate` | Derive amino acid changes across the marker | `results/aa_muts.json` |
 | `traits` | Infer ancestral country assignments | `results/traits.json` |
 | `export` | Assemble everything for Auspice | `auspice/toxoplasma-gondii-analysis.json` |
 
@@ -145,7 +170,9 @@ auspice/                      published JSON — tracked, served by nextstrain.o
 docs/                         README images
 toxo-analysis/
   config/
-    ToxoplasmaOutgroup.gb     RFLP marker reference (GenBank AF239291)
+    reference_genotype1.gb    reference: ToxoDB genotype #1, 297 bp, no coding region
+    annotations.json          nucleotide coordinates (1–297) passed to augur export
+    ToxoplasmaOutgroup.gb     GRA6 (GenBank AF239291), from the 38-sample pilot; unused
     auspice_config.json       titles, colorings, geo resolutions, panels
     colors.tsv                generated — all 6 categorical colorings
     lat_longs.tsv             generated — country, region, city
@@ -160,6 +187,8 @@ toxo-analysis/
     Toxo RFLP 1662 samples with coordinates.tsv   original upstream export
     toxo_expansion.txt           351 genotype -> marker sequence rows
     toxo_rflp_1662_metadata.tsv  isolate ID -> genotype mapping
+    toxo_rflp_1662_metadata_trimmed.tsv  same rows with padding stripped; header still
+                                 malformed, superseded by data/toxo_meta3.tsv
     toxo_meta2.csv, toxoplasma_metadata.tsv, toxoplasma_metadata_OLD.tsv
     book2_sequence_OLD.fasta, toxoplasma.fasta, samples_1, samples_2
   envs/nextstrain.yaml           conda environment, for running augur directly
@@ -185,8 +214,12 @@ you want to color or filter by needs a matching entry in `auspice_config.json`.
 **`sequences.fasta`** — headers must match the metadata `strain` column *exactly*. A
 mismatch here silently drops isolates from the build.
 
-**`reference.gb`** — a GenBank record with the CDS annotated, downloadable from NCBI.
-`augur translate` needs the annotation to compute amino acid changes.
+**`reference.gb`** — a GenBank record of a sequence from the same marker system as your
+data. If the sequences are a real gene, annotate its CDS and add a `translate` rule to get
+amino acid changes. If they are concatenated or coded markers, as here, leave the CDS out
+and supply nucleotide coordinates through a file like `config/annotations.json`. Aligning to
+a reference from a different gene still produces output, so check that the reference
+actually matches your sequences.
 
 **`colors.tsv`** — three tab-separated columns: `<metadata column>`, `<value>`, `<hex>`.
 The column name must match the metadata header exactly, **lowercase included**. Writing
@@ -210,14 +243,17 @@ Then update the path constants at the top of the `Snakefile` and the `colorings`
 
 These bound every claim above and are worth stating plainly.
 
-- **Single locus.** This is a single-marker gene tree, not a strain phylogeny. One RFLP
-  marker cannot resolve recombinant lineages, and *T. gondii* recombines.
+- **Coded alleles, not sequenced DNA.** The 297 bp sequences encode PCR-RFLP allele calls
+  at 11 markers; codes for unique alleles are pseudo-sequences. Branch lengths therefore
+  count allele differences, not real substitutions, and the tree is a genotype-similarity
+  tree rather than a strain phylogeny. *T. gondii* recombines, which a tree cannot fully
+  represent.
 - **Identical sequences by construction.** Isolates sharing a ToxoDB genotype have the same
   marker sequence, because sequences were expanded from a per-genotype representative. Tip
   clustering therefore reflects sampling effort as much as evolutionary relationship, and
   clade sizes should not be read as population sizes.
-- **The time axis is weakly informed.** A molecular clock fit to 297 bp over a 29-year
-  window carries little signal. Read the dating as relative ordering, not calendar dates.
+- **The time axis is weakly informed.** A molecular clock fit to 29 informative sites over a
+  29-year window carries little signal. Read the dating as relative ordering, not calendar dates.
 - **Most coordinates are approximate.** 1,495 of 1,662 isolates carry `GIS-proxy`
   coordinates — country or region centroids — against 167 marked `GIS-exact`. This is
   exposed as the *Coordinate Precision* coloring so it is visible while reading the map.
@@ -255,6 +291,9 @@ These bound every claim above and are worth stating plainly.
   (`Balc¸ova`, `Santare´m`, `Maranha˜o`) had the same mangled accents but no duplicate
   partner, and were repaired so the legend reads cleanly. Only the `city` column was
   touched; `Groß St. Florian` is correct German and was left alone.
+- **Three host labels were merged, and the count fell from 38 to 35.** `Chickens` into
+  `Chicken` (13 isolates), `Sea Otter` into `Sea otter` (17), and `coyote` into `Coyote` (1).
+  Each pair had split one host into two legend entries. Three isolates are from humans.
 - **68 isolates have no locality** and do not render at city zoom.
 - **Censored serologic titers were numified.** 41 MAT values recorded as inequalities
   (`>3200`, `<25`, …) were converted to their detection limit so they could be colored.
