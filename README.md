@@ -1,9 +1,10 @@
-# Toxoplasma gondii RFLP Phylogeny
+# Toxoplasma gondii PCR-RFLP Genotype Tree
 
-A time-resolved phylogeny of **1,662 *Toxoplasma gondii* isolates** from 35 countries and
-35 host species, built with [Nextstrain](https://nextstrain.org). *T. gondii* is a
-protozoan parasite, so this pipeline is an adaptation of Nextstrain's viral tooling to
-multilocus PCR-RFLP genotypes, each encoded as a 297 bp concatenated sequence.
+A time-scaled genotype-similarity tree of **1,662 *Toxoplasma gondii* isolates** from 35
+countries and 35 host species, built with [Nextstrain](https://nextstrain.org). *T. gondii*
+is a protozoan parasite, so this pipeline is an adaptation of Nextstrain's viral tooling to
+multilocus PCR-RFLP genotypes, each encoded as a 297 bp concatenated sequence. It is not a
+rooted strain phylogeny; see [Caveats](#caveats).
 
 Sachi Ramachandran and Dr. Chunlei Su · University of Tennessee, Knoxville · MICR 493
 
@@ -11,7 +12,7 @@ Sachi Ramachandran and Dr. Chunlei Su · University of Tennessee, Knoxville · M
 
 **[View the interactive tree →](https://nextstrain.org/community/sachiramachandran/toxoplasma-gondii-analysis)**
 
-![Auspice view of the T. gondii RFLP phylogeny](docs/auspice_overview.png)
+![Auspice view of the T. gondii PCR-RFLP genotype tree](docs/auspice_overview.png)
 
 ## What this build adds
 
@@ -45,7 +46,7 @@ it:
 610 South American isolates yield 155 genotypes; 88 European isolates yield six. The
 gradient is visible directly in the tree's branching structure, not just in a summary table.
 
-**Mouse virulence mapped onto the phylogeny.** `mortality_percent` is exposed as a
+**Mouse virulence mapped onto the tree.** `mortality_percent` is exposed as a
 continuous coloring across the 872 isolates with a recorded value — a virulence axis no
 stock Nextstrain build has. It separates genotypes sharply:
 
@@ -142,6 +143,15 @@ Build from the repository root:
 
 ```bash
 nextstrain build --docker .
+```
+
+The published build was made with Nextstrain CLI 10.2.1 and the Docker image
+`nextstrain/base:build-20250917T234053Z`, which provides Augur 31.5.0, Auspice 2.66.0,
+TreeTime 0.11.4, IQ-TREE 3.0.1 and Snakemake 9.6.2. Newer images can change Augur's
+behavior, so to reproduce it exactly, pin the image:
+
+```bash
+nextstrain build --docker --image nextstrain/base:build-20250917T234053Z .
 ```
 
 View the result locally:
@@ -252,8 +262,18 @@ These bound every claim above and are worth stating plainly.
   marker sequence, because sequences were expanded from a per-genotype representative. Tip
   clustering therefore reflects sampling effort as much as evolutionary relationship, and
   clade sizes should not be read as population sizes.
+- **The tree has no root.** There is no ancestral genotype or outgroup to root a tree of
+  coded alleles, so the displayed root is not biological. It is wherever IQ-TREE placed it,
+  kept by `augur refine --keep-root`, and it falls among genotype #1 isolates. Do not read
+  the root position or the order of the deepest branches as ancestry.
 - **The time axis is weakly informed.** A molecular clock fit to 29 informative sites over a
-  29-year window carries little signal. Read the dating as relative ordering, not calendar dates.
+  29-year window carries little signal, and the root date sits at the earliest samples
+  because the tree has no real root. Read the dating as relative ordering, not calendar dates.
+- **No transmission lines on the map.** Isolates of the same genotype carry identical
+  sequences, so ancestral country reconstruction joins countries that share a genotype. Those
+  lines would show shared genotypes, not transmission events, so the map shows only the
+  genotype mix at each location (`"transmission_lines": false` in `auspice_config.json`).
+  Viewers can still switch them on in Auspice.
 - **Most coordinates are approximate.** 1,495 of 1,662 isolates carry `GIS-proxy`
   coordinates — country or region centroids — against 167 marked `GIS-exact`. This is
   exposed as the *Coordinate Precision* coloring so it is visible while reading the map.
