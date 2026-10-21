@@ -1,5 +1,5 @@
 {
-  "title": "Toxoplasma gondii Phylogeny",
+  "title": "Toxoplasma gondii PCR-RFLP Genotype Tree",
   "maintainers": [
     {"name": "Sachi Ramachandran, Dr. Chunlei Su", "url": ""}
   ],
@@ -27,7 +27,8 @@
     "entropy"
   ],
   "display_defaults": {
-    "map_triplicate": true
+    "map_triplicate": true,
+    "transmission_lines": false
   },
   "filters": [
     "genotype",
