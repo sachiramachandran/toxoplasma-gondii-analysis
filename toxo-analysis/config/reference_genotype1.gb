@@ -1,0 +1,23 @@
+LOCUS       ToxoDB_genotype_1        297 bp    DNA     linear   UNK 20-OCT-2026
+DEFINITION  Toxoplasma gondii ToxoDB PCR-RFLP genotype #1 (Type II), concatenated
+            sequence codes for 11 PCR-RFLP markers. No coding region defined.
+ACCESSION   ToxoDB_genotype_1
+VERSION     ToxoDB_genotype_1
+KEYWORDS    .
+SOURCE      Toxoplasma gondii
+  ORGANISM  Toxoplasma gondii
+COMMENT     Marker order and positions: SAG1 1-22, 5'-3' SAG2 23-44, alt. SAG2
+            45-77, SAG3 78-99, BTUB 100-121, GRA6 122-143, c22-8 144-176, c29-2
+            177-209, L358 210-231, PK1 232-275, Apico 276-297. Sequence codes from
+            "RFLP genotypes to sequence SeqCoded" workbook (C. Su).
+FEATURES             Location/Qualifiers
+     source          1..297
+                     /organism="Toxoplasma gondii"
+                     /mol_type="genomic DNA"
+ORIGIN      
+        1 agggctgacg atggcgctat gggcgattct gtgaaagcgc agtactgctc gacctcctcg
+       61 agtctgcaca gaatcgctcc ccgtcagttt cccagcaact aaatggagcc tcggtcgttc
+      121 ttctgcctaa caagttaaag gacagtctcg agggtttcaa tctctttcgc tcttctacgt
+      181 atgccattgc agtacacacc tacgtattcc gcgcggccac cgcccgtgtc gacccgagta
+      241 tctcatgcac aattgcgtgc acttacgtac tgaccttaaa cttagaattt acttaag
+//

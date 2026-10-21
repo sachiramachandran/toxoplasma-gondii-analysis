@@ -1,4 +1,10 @@
-# Nextstrain build for Toxoplasma gondii GRA6.
+# Nextstrain build for Toxoplasma gondii PCR-RFLP genotypes.
+#
+# Each isolate carries a 297 bp sequence made by concatenating fixed sequence
+# codes for its alleles at 11 PCR-RFLP markers (SAG1, 5'-3' SAG2, alt. SAG2,
+# SAG3, BTUB, GRA6, c22-8, c29-2, L358, PK1, Apico). The reference is the
+# ToxoDB genotype #1 sequence with no coding region, so no amino-acid
+# changes are inferred.
 #
 # Adapted from nextstrain/zika-tutorial. Run from the repository root:
 #
@@ -14,7 +20,8 @@
 input_fasta     = "toxo-analysis/data/toxoplasma_sequences.fasta"
 input_metadata  = "toxo-analysis/data/toxo_meta3.tsv"
 dropped_strains = "toxo-analysis/config/dropped_strains.txt"
-reference       = "toxo-analysis/config/ToxoplasmaOutgroup.gb"
+reference       = "toxo-analysis/config/reference_genotype1.gb"
+annotations     = "toxo-analysis/config/annotations.json"
 colors          = "toxo-analysis/config/colors.tsv"
 lat_longs       = "toxo-analysis/config/lat_longs.tsv"
 auspice_config  = "toxo-analysis/config/auspice_config.json"
@@ -87,7 +94,8 @@ rule align:
     message:
         """
         Aligning sequences to {input.reference}
-          - filling gaps with N
+          - filling gaps with N (dashes mark untyped markers)
+          - removing the reference from the output
         """
     input:
         sequences = rules.filter.output.sequences,
@@ -100,7 +108,8 @@ rule align:
             --sequences {input.sequences} \
             --reference-sequence {input.reference} \
             --output {output.alignment} \
-            --fill-gaps
+            --fill-gaps \
+            --remove-reference
         """
 
 rule tree:
@@ -125,8 +134,8 @@ rule refine:
           - estimate {params.date_inference} node dates
           - filter tips more than {params.clock_filter_iqd} IQDs from clock expectation
 
-        The clock rate is retuned for a 297 bp protozoan locus; the tutorial's
-        defaults assume a whole RNA virus genome.
+        The clock rate is retuned for a 297 bp concatenated PCR-RFLP sequence;
+        the tutorial's defaults assume a whole RNA virus genome.
         """
     input:
         tree = rules.tree.output.tree,
@@ -160,14 +169,22 @@ rule refine:
         """
 
 rule ancestral:
-    message: "Reconstructing ancestral sequences and mutations"
+    message:
+        """
+        Reconstructing ancestral sequences and nucleotide mutations.
+        There is no translate rule: the concatenated marker codes have no
+        coding region. Nucleotide coordinates for Auspice come from
+        {params.annotations} at export, because augur ancestral only accepts
+        --annotation together with genes to translate.
+        """
     input:
         tree = rules.refine.output.tree,
         alignment = rules.align.output.alignment
     output:
         node_data = f"{results}/nt_muts.json"
     params:
-        inference = "joint"
+        inference = "joint",
+        annotations = annotations
     shell:
         """
         augur ancestral \
@@ -175,23 +192,6 @@ rule ancestral:
             --alignment {input.alignment} \
             --output-node-data {output.node_data} \
             --inference {params.inference}
-        """
-
-rule translate:
-    message: "Translating amino acid sequences"
-    input:
-        tree = rules.refine.output.tree,
-        node_data = rules.ancestral.output.node_data,
-        reference = reference
-    output:
-        node_data = f"{results}/aa_muts.json"
-    shell:
-        """
-        augur translate \
-            --tree {input.tree} \
-            --ancestral-sequences {input.node_data} \
-            --reference-sequence {input.reference} \
-            --output-node-data {output.node_data}
         """
 
 rule traits:
@@ -221,7 +221,7 @@ rule export:
         branch_lengths = rules.refine.output.node_data,
         traits = rules.traits.output.node_data,
         nt_muts = rules.ancestral.output.node_data,
-        aa_muts = rules.translate.output.node_data,
+        annotations = annotations,
         colors = colors,
         lat_longs = lat_longs,
         auspice_config = auspice_config
@@ -232,7 +232,7 @@ rule export:
         augur export v2 \
             --tree {input.tree} \
             --metadata {input.metadata} \
-            --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.aa_muts} \
+            --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.annotations} \
             --colors {input.colors} \
             --lat-longs {input.lat_longs} \
             --auspice-config {input.auspice_config} \

@@ -320,43 +320,40 @@ city	West Feliciana (LA)	#C95EC4
 city	Zengcheng	#94DBCA
 city	Zhejiang	#BB651B
 host	Chicken	#5BC059
-host	Cat	#59C067
-host	Pig	#59C077
-host	Dog	#59C087
-host	Feral Pig	#59C098
-host	Sheep	#59C0A8
-host	white tailed deer	#59C0B8
-host	Capybara	#59B7C0
-host	Fox	#59A7C0
-host	Goat	#5996C0
-host	Wolf	#5986C0
-host	Sea otter	#5976C0
-host	Sea Otter	#5966C0
-host	Chickens	#5C59C0
-host	Canada goose	#6C59C0
-host	Eared dove	#7D59C0
-host	Raccoon	#8D59C0
-host	Coyote	#9D59C0
-host	Nine-banded armadillo	#AE59C0
-host	White-lipped peccary	#BE59C0
-host	Collared anteater	#C059B2
-host	Human	#C059A1
-host	Cattle Egret	#C05991
-host	Six banded-armadillo	#C05981
-host	Skunk	#C05970
-host	Spotted paca	#C05960
-host	Black Bear	#C06159
-host	Black Howler monkey	#C07259
-host	Cougar	#C08259
-host	Cow	#C09259
-host	Dolphin	#C0A359
-host	Goose	#C0B359
-host	Hoary fox	#BDC059
-host	Maned wolf	#ACC059
-host	Oncilla	#9CC059
-host	Red-winged tinamou	#8CC059
-host	Toucan	#7BC059
-host	coyote	#6BC059
+host	Cat	#59C068
+host	Pig	#59C07A
+host	Dog	#59C08C
+host	Feral Pig	#59C09D
+host	Sheep	#59C0AF
+host	white tailed deer	#59BFC0
+host	Sea otter	#59ADC0
+host	Capybara	#599CC0
+host	Fox	#598AC0
+host	Goat	#5978C0
+host	Wolf	#5966C0
+host	Canada goose	#5C59C0
+host	Eared dove	#6E59C0
+host	Coyote	#8059C0
+host	Raccoon	#9259C0
+host	Nine-banded armadillo	#A359C0
+host	White-lipped peccary	#B559C0
+host	Collared anteater	#C059B9
+host	Human	#C059A7
+host	Cattle Egret	#C05996
+host	Six banded-armadillo	#C05984
+host	Skunk	#C05972
+host	Spotted paca	#C05961
+host	Black Bear	#C06259
+host	Black Howler monkey	#C07459
+host	Cougar	#C08659
+host	Cow	#C09759
+host	Dolphin	#C0A959
+host	Goose	#C0BB59
+host	Hoary fox	#B3C059
+host	Maned wolf	#A1C059
+host	Oncilla	#90C059
+host	Red-winged tinamou	#7EC059
+host	Toucan	#6CC059
 genotype	3	#BB7B1B
 genotype	2	#7544E4
 genotype	1	#82ED84
