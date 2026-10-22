@@ -1,0 +1,105 @@
+cff-version: 1.2.0
+message: >-
+  If you use this dataset or workflow, please cite it as below.
+  Please also cite the original studies for any isolates you use;
+  they are listed in the Reference column of toxo-analysis/data/toxo_meta3.tsv.
+title: "Toxoplasma gondii PCR-RFLP genotype database and Nextstrain build"
+type: software
+authors:
+  - given-names: Sachi
+    family-names: Ramachandran
+    affiliation: "University of Tennessee, Knoxville"
+    orcid: "https://orcid.org/0009-0009-3973-9367"
+  - given-names: Chunlei
+    family-names: Su
+    affiliation: "University of Tennessee, Knoxville"
+    orcid: "https://orcid.org/0000-0001-8392-7108"
+abstract: >-
+  A public database of 1,662 Toxoplasma gondii isolates from 35 countries and
+  35 host species, compiled from 53 published studies, with ToxoDB PCR-RFLP
+  genotypes at 11 markers, host, location, collection year, MAT titer and mouse
+  mortality. Each genotype is encoded as a 297 bp sequence of concatenated
+  allele codes and analysed with a Nextstrain (Augur/Auspice) workflow to
+  produce an interactive genotype-similarity tree and map. Code is licensed
+  under MIT; data under CC BY 4.0 (see LICENSE-DATA).
+keywords:
+  - Toxoplasma gondii
+  - PCR-RFLP
+  - genotyping
+  - molecular epidemiology
+  - Nextstrain
+  - zoonosis
+license: MIT
+repository-code: "https://github.com/sachiramachandran/toxoplasma-gondii-analysis"
+url: "https://nextstrain.org/community/sachiramachandran/toxoplasma-gondii-analysis"
+references:
+  - type: article
+    title: "Nextstrain: real-time tracking of pathogen evolution"
+    authors:
+      - family-names: Hadfield
+        given-names: James
+      - name: "et al."
+    journal: Bioinformatics
+    year: 2018
+    volume: 34
+    issue: 23
+    start: 4121
+    end: 4123
+    doi: 10.1093/bioinformatics/bty407
+  - type: article
+    title: "Augur: a bioinformatics toolkit for phylogenetic analyses of human pathogens"
+    authors:
+      - family-names: Huddleston
+        given-names: John
+      - name: "et al."
+    journal: Journal of Open Source Software
+    year: 2021
+    volume: 6
+    issue: 57
+    start: 2906
+    doi: 10.21105/joss.02906
+  - type: article
+    title: "TreeTime: Maximum-likelihood phylodynamic analysis"
+    authors:
+      - family-names: Sagulenko
+        given-names: Pavel
+      - family-names: Puller
+        given-names: Vadim
+      - family-names: Neher
+        given-names: Richard A.
+    journal: Virus Evolution
+    year: 2018
+    volume: 4
+    issue: 1
+    doi: 10.1093/ve/vex042
+  - type: article
+    title: "MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform"
+    authors:
+      - family-names: Katoh
+        given-names: Kazutaka
+      - name: "et al."
+    journal: Nucleic Acids Research
+    year: 2002
+    volume: 30
+    issue: 14
+    doi: 10.1093/nar/gkf436
+  - type: article
+    title: "IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models"
+    authors:
+      - family-names: Wong
+        given-names: Thomas K. F.
+      - name: "et al."
+    journal: Molecular Biology and Evolution
+    year: 2026
+    doi: 10.1093/molbev/msag117
+  - type: article
+    title: "Sustainable data analysis with Snakemake"
+    authors:
+      - family-names: Mölder
+        given-names: Felix
+      - name: "et al."
+    journal: F1000Research
+    year: 2021
+    volume: 10
+    start: 33
+    doi: 10.12688/f1000research.29032.3
