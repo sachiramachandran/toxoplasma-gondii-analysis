@@ -326,3 +326,14 @@ Built by Sachi Ramachandran with Dr. Chunlei Su, University of Tennessee, Knoxvi
 
 Adapted from the [Nextstrain Zika tutorial](https://github.com/nextstrain/zika-tutorial).
 Built with [Augur and Auspice](https://docs.nextstrain.org/en/latest/index.html).
+
+## License
+
+- **Code** (the `Snakefile`, scripts and configuration): [MIT License](LICENSE).
+- **Data** (`toxo-analysis/data/`, `toxo-analysis/old_data_backup/` and `auspice/`):
+  [Creative Commons Attribution 4.0](LICENSE-DATA). You may reuse and adapt the data,
+  including commercially, if you credit Ramachandran and Su and cite the original studies
+  listed in the `Reference` column.
+
+The screenshot in `docs/` shows the Auspice visualization from
+[nextstrain.org](https://nextstrain.org).
