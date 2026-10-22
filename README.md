@@ -1,5 +1,7 @@
 # Toxoplasma gondii PCR-RFLP Genotype Tree
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23573645.svg)](https://doi.org/10.5281/zenodo.23573645)
+
 A time-scaled genotype-similarity tree of **1,662 *Toxoplasma gondii* isolates** from 35
 countries and 35 host species, built with [Nextstrain](https://nextstrain.org). *T. gondii*
 is a protozoan parasite, so this pipeline is an adaptation of Nextstrain's viral tooling to
@@ -329,9 +331,16 @@ Built with [Augur and Auspice](https://docs.nextstrain.org/en/latest/index.html)
 
 ## Citing
 
-Citation details are in [`CITATION.cff`](CITATION.cff); GitHub's **Cite this repository**
-button formats them as APA or BibTeX. Please also cite the original studies for any isolates
-you use, listed in the `Reference` column of `toxo-analysis/data/toxo_meta3.tsv`.
+Ramachandran S, Su C (2026). *Toxoplasma gondii PCR-RFLP genotype database and Nextstrain
+build*. Zenodo. https://doi.org/10.5281/zenodo.23573645
+
+That DOI always resolves to the latest release. To cite the exact version you used, take its
+own DOI from the Zenodo record; v1.0.0 is
+[10.5281/zenodo.23573646](https://doi.org/10.5281/zenodo.23573646).
+
+Citation details are also in [`CITATION.cff`](CITATION.cff); GitHub's **Cite this
+repository** button formats them as APA or BibTeX. Please also cite the original studies for
+any isolates you use, listed in the `Reference` column of `toxo-analysis/data/toxo_meta3.tsv`.
 
 ## License
 
