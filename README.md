@@ -327,6 +327,12 @@ Built by Sachi Ramachandran with Dr. Chunlei Su, University of Tennessee, Knoxvi
 Adapted from the [Nextstrain Zika tutorial](https://github.com/nextstrain/zika-tutorial).
 Built with [Augur and Auspice](https://docs.nextstrain.org/en/latest/index.html).
 
+## Citing
+
+Citation details are in [`CITATION.cff`](CITATION.cff); GitHub's **Cite this repository**
+button formats them as APA or BibTeX. Please also cite the original studies for any isolates
+you use, listed in the `Reference` column of `toxo-analysis/data/toxo_meta3.tsv`.
+
 ## License
 
 - **Code** (the `Snakefile`, scripts and configuration): [MIT License](LICENSE).
